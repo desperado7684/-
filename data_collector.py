@@ -5,107 +5,115 @@ import numpy as np
 from datetime import datetime
 import pytz
 
-# 카테고리별 정밀 추적 자산 (거시경제, 글로벌 지수, 핵심 포트폴리오)
+# 검색과 분석을 위한 핵심 유니버스 세팅
 ASSETS = {
-    # 1. Macro & Yields (거시/금리/환율)
-    "KRW=X": {"name": "USD/KRW 환율", "cat": "macro", "invert": True}, # 환율 상승은 KOSPI에 악재
-    "^TNX": {"name": "미 국채 10년물", "cat": "macro", "invert": True},
-    "^VIX": {"name": "VIX 공포지수", "cat": "macro", "invert": True},
-    "DX-Y.NYB": {"name": "달러 인덱스", "cat": "macro", "invert": True},
+    # 한국 핵심 종목
+    "^KS11": {"name": "코스피 종합지수", "type": "국내지수"},
+    "005930.KS": {"name": "삼성전자", "type": "국내주식"},
+    "000660.KS": {"name": "SK하이닉스", "type": "국내주식"},
+    "005380.KS": {"name": "현대차", "type": "국내주식"},
+    "086790.KS": {"name": "하나금융지주", "type": "국내주식"},
+    "035420.KS": {"name": "NAVER", "type": "국내주식"},
     
-    # 2. Global Indices (글로벌 지수)
-    "^SOX": {"name": "필라델피아 반도체", "cat": "index", "invert": False},
-    "^IXIC": {"name": "NASDAQ", "cat": "index", "invert": False},
-    "^GSPC": {"name": "S&P 500", "cat": "index", "invert": False},
-    "^N225": {"name": "닛케이 225", "cat": "index", "invert": False},
+    # 글로벌 빅테크 및 지수
+    "^SOX": {"name": "필라델피아 반도체", "type": "해외지수"},
+    "^IXIC": {"name": "나스닥 종합", "type": "해외지수"},
+    "MSFT": {"name": "마이크로소프트", "type": "해외주식"},
+    "META": {"name": "메타 (페이스북)", "type": "해외주식"},
+    "NVDA": {"name": "엔비디아", "type": "해외주식"},
+    "TSLA": {"name": "테슬라", "type": "해외주식"},
+    "AAPL": {"name": "애플", "type": "해외주식"},
     
-    # 3. Core Holdings & Indicators (핵심 자산 및 지표)
-    "MSFT": {"name": "Microsoft", "cat": "core", "invert": False},
-    "META": {"name": "Meta Platforms", "cat": "core", "invert": False},
-    "BTC-USD": {"name": "Bitcoin", "cat": "core", "invert": False},
-    "000660.KS": {"name": "SK하이닉스", "cat": "kr_core", "invert": False},
-    "005930.KS": {"name": "삼성전자", "cat": "kr_core", "invert": False},
-    "005380.KS": {"name": "현대차", "cat": "kr_core", "invert": False},
-    "^KS11": {"name": "KOSPI", "cat": "kr_core", "invert": False}
+    # 거시경제 & 리스크 지표
+    "KRW=X": {"name": "원/달러 환율", "type": "거시/환율"},
+    "^TNX": {"name": "미 국채 10년물", "type": "거시/금리"},
+    "^VIX": {"name": "VIX 공포지수", "type": "리스크"},
+    "BTC-USD": {"name": "비트코인", "type": "가상자산"}
 }
 
-def calculate_rsi(series, period=14):
-    delta = series.diff()
-    gain = (delta.where(delta > 0, 0)).rolling(window=period).mean()
-    loss = (-delta.where(delta < 0, 0)).rolling(window=period).mean()
-    rs = gain / loss
-    return 100 - (100 / (1 + rs))
+def analyze_and_comment(rsi, macd, bb, change, asset_type):
+    """지표를 분석하여 토스 스타일의 친절한 해설 생성"""
+    if asset_type in ["거시/환율", "거시/금리", "리스크"]:
+        if change > 1.0: return "시장 불안감이 커지고 있어요. 보수적인 투자가 필요한 시점이에요. 🚨"
+        elif change < -1.0: return "불안 요소가 줄어들고 있어요. 증시에는 긍정적인 신호예요. 🌤️"
+        else: return "큰 변동 없이 안정적인 흐름을 보이고 있어요. ⚖️"
 
-def collect_data():
+    if rsi >= 70 or bb >= 95:
+        return "단기적으로 많이 올랐어요. 과열 상태일 수 있으니 추격 매수는 조심하세요. 🔥"
+    elif rsi <= 30 or bb <= 5:
+        return "최근 많이 떨어졌어요. 기술적 반등(저점 매수)을 노려볼 만한 구간이에요. 💡"
+    elif macd > 0 and change > 0:
+        return "상승 추세를 탔어요! 모멘텀이 좋아서 더 오를 가능성이 있어요. 🚀"
+    elif macd < 0 and change < 0:
+        return "하락 추세가 이어지고 있어요. 바닥을 다질 때까지 조금 더 지켜보세요. 📉"
+    else:
+        return "뚜렷한 방향성 없이 에너지를 모으는 중이에요. 분할 매수하기 좋은 시기예요. 🧩"
+
+def collect():
     kst = pytz.timezone('Asia/Seoul')
-    now_kst = datetime.now(kst)
-    market_data = {}
-    
-    # 예측 엔진을 위한 팩터 변수
-    factors = {"bull_score": 0, "bear_score": 0, "total_weight": 0}
+    now = datetime.now(kst)
+    market_data = []
 
-    for symbol, info in ASSETS.items():
+    for sym, info in ASSETS.items():
         try:
-            ticker = yf.Ticker(symbol)
-            # 기술적 분석을 위해 1개월 데이터 수집
-            hist = ticker.history(period="1mo")
+            t = yf.Ticker(sym)
+            hist = t.history(period="3mo")
             
-            if len(hist) >= 15: # RSI 계산 최소 요건 충족
-                close_prices = hist['Close']
-                current_price = close_prices.iloc[-1]
-                prev_price = close_prices.iloc[-2]
-                change_pct = ((current_price - prev_price) / prev_price) * 100
+            if len(hist) > 30:
+                close = hist['Close']
+                cur = close.iloc[-1]
+                prev = close.iloc[-2]
+                chg_pct = ((cur - prev) / prev) * 100
                 
-                # 변동성(최근 5일 표준편차) 및 RSI 계산
-                volatility = close_prices.tail(5).pct_change().std() * 100
-                rsi_series = calculate_rsi(close_prices)
-                current_rsi = rsi_series.iloc[-1]
+                # 1. RSI 계산
+                delta = close.diff()
+                gain = (delta.where(delta > 0, 0)).rolling(14).mean()
+                loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+                rs = gain / loss
+                rsi = 100 - (100 / (1 + rs))
+                current_rsi = round(rsi.iloc[-1], 1) if not np.isnan(rsi.iloc[-1]) else 50
                 
-                market_data[symbol] = {
+                # 2. MACD 계산
+                exp1 = close.ewm(span=12, adjust=False).mean()
+                exp2 = close.ewm(span=26, adjust=False).mean()
+                macd = exp1 - exp2
+                signal = macd.ewm(span=9, adjust=False).mean()
+                macd_hist = round((macd - signal).iloc[-1], 2)
+
+                # 3. Bollinger Bands %B 계산
+                sma = close.rolling(window=20).mean()
+                std = close.rolling(window=20).std()
+                upper_bb = sma + (std * 2)
+                lower_bb = sma - (std * 2)
+                bb_pct = round(((cur - lower_bb.iloc[-1]) / (upper_bb.iloc[-1] - lower_bb.iloc[-1])) * 100, 1)
+                
+                # 해설 생성
+                comment = analyze_and_comment(current_rsi, macd_hist, bb_pct, chg_pct, info["type"])
+                
+                market_data.append({
+                    "symbol": sym,
                     "name": info["name"],
-                    "cat": info["cat"],
-                    "price": round(current_price, 2),
-                    "change": round(change_pct, 2),
-                    "rsi": round(current_rsi, 1) if not np.isnan(current_rsi) else 50,
-                    "volatility": round(volatility, 2) if not np.isnan(volatility) else 0,
-                    "trend": "Overbought" if current_rsi > 70 else "Oversold" if current_rsi < 30 else "Neutral",
-                    "ok": True
-                }
-                
-                # [KOSPI 예측 엔진 로직] 
-                # Macro와 글로벌 Index만 가중치 점수에 반영
-                if info["cat"] in ["macro", "index"]:
-                    # 역상관(invert) 자산은 방향을 반대로 계산
-                    direction_multiplier = -1 if info["invert"] else 1
-                    # 단순 등락이 아닌 변동성 대비 모멘텀(Momentum / Volatility)을 가중치로 사용
-                    weight = 1.5 if symbol in ["^SOX", "KRW=X"] else 1.0 # 반도체와 환율에 초과 가중치
-                    impact = (change_pct * direction_multiplier * weight) / (volatility if volatility > 0 else 1)
-                    
-                    if impact > 0:
-                        factors["bull_score"] += impact
-                    else:
-                        factors["bear_score"] += abs(impact)
-                    factors["total_weight"] += weight
-
+                    "type": info["type"],
+                    "price": round(cur, 2) if cur > 100 else round(cur, 4),
+                    "change": round(chg_pct, 2),
+                    "tech": {"rsi": current_rsi, "macd": macd_hist, "bb": bb_pct},
+                    "comment": comment
+                })
         except Exception as e:
-            print(f"Fetch failed for {symbol}: {e}")
-            market_data[symbol] = {"name": info["name"], "ok": False}
+            print(f"Error {sym}: {e}")
 
-    # 최종 예측 점수 산출 (Z-Score 기반 정규화 모델 모사)
-    raw_signal = (factors["bull_score"] - factors["bear_score"]) / (factors["total_weight"] if factors["total_weight"] > 0 else 1)
-    
-    final_output = {
-        "timestamp": now_kst.strftime("%Y-%m-%d %H:%M:%S KST"),
-        "market": market_data,
-        "analytics": {
-            "signal_strength": round(raw_signal, 3),
-            "bull_pressure": round(factors["bull_score"], 2),
-            "bear_pressure": round(factors["bear_score"], 2)
-        }
+    # 시장 온도 계산 (매크로 제외한 자산 중 상승 비율)
+    risk_assets = [d for d in market_data if d["type"] not in ["거시/환율", "거시/금리", "리스크"]]
+    bull_count = sum(1 for d in risk_assets if d["change"] > 0)
+    market_temp = round((bull_count / len(risk_assets)) * 100) if risk_assets else 50
+
+    output = {
+        "kst": now.strftime("%Y년 %m월 %d일 %H:%M 기준"),
+        "market_temp": market_temp,
+        "data": market_data
     }
-
+    
     with open('data.json', 'w', encoding='utf-8') as f:
-        json.dump(final_output, f, ensure_ascii=False, indent=2)
+        json.dump(output, f, ensure_ascii=False, indent=2)
 
-if __name__ == "__main__":
-    collect_data()
+if __name__ == "__main__": collect()
