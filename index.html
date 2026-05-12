@@ -1,217 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Institutional Quant Terminal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KOSPI ORACLE</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     <style>
-        body { background-color: #0d1117; color: #c9d1d9; font-family: 'Inter', sans-serif; }
-        .mono { font-family: 'JetBrains Mono', monospace; }
-        .panel { background: #161b22; border: 1px solid #30363d; border-radius: 8px; }
-        .up { color: #3fb950; }
-        .down { color: #f85149; }
-        .neutral { color: #8b949e; }
-        .bg-up { background-color: rgba(63, 185, 80, 0.1); border-left: 3px solid #3fb950; }
-        .bg-down { background-color: rgba(248, 81, 73, 0.1); border-left: 3px solid #f85149; }
-        .rsi-high { color: #f85149; } /* Overbought */
-        .rsi-low { color: #3fb950; } /* Oversold */
+        body { font-family: 'Pretendard', -apple-system, sans-serif; background-color: #f2f4f6; color: #191f28; -webkit-font-smoothing: antialiased; }
         
-        table { width: 100%; text-align: left; border-collapse: collapse; }
-        th { font-size: 0.75rem; text-transform: uppercase; color: #8b949e; padding: 12px 16px; border-bottom: 1px solid #30363d; font-weight: 600; letter-spacing: 0.05em; }
-        td { padding: 12px 16px; border-bottom: 1px solid #21262d; font-size: 0.875rem; }
-        tr:hover td { background-color: #1f242c; }
+        /* 토스증권 컬러 시스템 */
+        .color-up { color: #f04452; } 
+        .color-down { color: #3182f6; } 
+        .bg-up { background-color: #f04452; }
+        .bg-down { background-color: #3182f6; }
+        .bg-flat { background-color: #8b95a1; }
+        
+        /* 공통 컴포넌트 */
+        .surface { background: #ffffff; border-radius: 20px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02); }
+        
+        /* 검색창 */
+        .search-container { position: relative; margin-bottom: 24px; }
+        .search-input { width: 100%; padding: 18px 20px 18px 50px; background: #ffffff; border: 2px solid transparent; border-radius: 16px; font-size: 1.05rem; font-weight: 600; color: #191f28; outline: none; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .search-input:focus { border-color: #3182f6; box-shadow: 0 4px 12px rgba(49, 130, 246, 0.1); }
+        .search-input::placeholder { color: #8b95a1; font-weight: 500; }
+        .search-icon { position: absolute; left: 18px; top: 18px; color: #8b95a1; }
+
+        /* 리스트 아이템 */
+        .list-item { padding: 16px 0; border-bottom: 1px solid #f2f4f6; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+        .list-item:last-child { border-bottom: none; }
+        
+        /* 디테일 아코디언 패널 */
+        .detail-panel { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; opacity: 0; background: #f9fafb; border-radius: 12px; margin-top: 0; }
+        .detail-panel.active { max-height: 300px; opacity: 1; padding: 16px; margin-top: 12px; }
+        
+        /* 배지 */
+        .badge { padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; background: #f2f4f6; color: #4e5968; }
     </style>
 </head>
-<body class="p-6 md:p-10">
+<body class="p-4 md:p-6 lg:max-w-2xl mx-auto">
 
-    <header class="max-w-7xl mx-auto flex justify-between items-end mb-8 border-b border-[#30363d] pb-6">
-        <div>
-            <h1 class="text-3xl font-bold text-white tracking-tight">K-QUANT <span class="text-blue-500">TERMINAL</span></h1>
-            <p class="text-sm text-[#8b949e] mt-2 mono">MULTI-FACTOR PREDICTIVE ENGINE V3</p>
-        </div>
-        <div class="text-right mono text-xs text-[#8b949e]">
-            <div id="sys-status" class="flex items-center justify-end gap-2 mb-1">
-                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> ONLINE
-            </div>
-            <div id="last-update">SYNC: --:--:-- KST</div>
-        </div>
+    <header class="flex justify-between items-center mb-6 pt-2">
+        <h1 class="text-2xl font-extrabold tracking-tight text-[#191f28]">KOSPI ORACLE</h1>
+        <div id="sync-time" class="text-[11px] font-bold text-[#8b95a1] bg-[#f2f4f6] px-3 py-1.5 rounded-full">데이터 동기화 중...</div>
     </header>
 
-    <main class="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-3 gap-6">
+    <div class="surface" style="background: linear-gradient(135deg, #191f28 0%, #333d4b 100%); color: white;">
+        <div class="flex justify-between items-center mb-4">
+            <span class="text-sm font-bold text-gray-300">현재 시장 분위기</span>
+            <span class="text-[10px] font-bold px-2 py-1 bg-white/10 rounded uppercase">AI Quant</span>
+        </div>
+        <div id="market-title" class="text-3xl font-extrabold mb-1">분석 중...</div>
+        <p id="market-desc" class="text-sm text-gray-400 font-medium mb-6">글로벌 지수와 종목을 종합하고 있어요.</p>
         
-        <div class="xl:col-span-1 space-y-6">
-            
-            <div class="panel p-6" id="oracle-panel">
-                <h2 class="text-xs font-bold text-[#8b949e] uppercase tracking-wider mb-4">KOSPI Directional Bias</h2>
-                <div class="flex items-baseline gap-4 mb-2">
-                    <span id="bias-text" class="text-4xl font-extrabold mono text-white">--</span>
-                </div>
-                <div class="w-full bg-[#0d1117] h-3 rounded mt-4 overflow-hidden flex border border-[#30363d]">
-                    <div id="bull-bar" class="h-full bg-green-500" style="width: 50%"></div>
-                    <div id="bear-bar" class="h-full bg-red-500" style="width: 50%"></div>
-                </div>
-                <div class="flex justify-between text-xs mono mt-2 text-[#8b949e]">
-                    <span>BULL <span id="bull-val">0</span></span>
-                    <span>BEAR <span id="bear-val">0</span></span>
-                </div>
-                <p id="bias-logic" class="mt-6 text-sm text-[#c9d1d9] leading-relaxed">Initializing multi-factor model...</p>
-            </div>
-
-            <div class="panel">
-                <h2 class="text-xs font-bold text-[#8b949e] uppercase tracking-wider p-5 border-b border-[#30363d]">Macro & Yields (Inverted Risk)</h2>
-                <div class="overflow-x-auto">
-                    <table id="macro-table">
-                        </table>
-                </div>
-            </div>
+        <div class="w-full bg-gray-700 h-2.5 rounded-full overflow-hidden flex">
+            <div id="temp-bar" class="h-full transition-all duration-1000 bg-flat" style="width: 50%"></div>
         </div>
-
-        <div class="xl:col-span-2 space-y-6">
-            
-            <div class="panel">
-                <h2 class="text-xs font-bold text-[#8b949e] uppercase tracking-wider p-5 border-b border-[#30363d]">Global Indices & Tech Drivers</h2>
-                <div class="overflow-x-auto">
-                    <table id="index-table">
-                        <thead>
-                            <tr>
-                                <th>Asset</th>
-                                <th class="text-right">Price</th>
-                                <th class="text-right">Chg %</th>
-                                <th class="text-right">RSI (14D)</th>
-                                <th class="text-right">Vol (5D)</th>
-                            </tr>
-                        </thead>
-                        <tbody id="index-body"></tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="panel">
-                <h2 class="text-xs font-bold text-[#8b949e] uppercase tracking-wider p-5 border-b border-[#30363d]">Core Fundamentals Tracker</h2>
-                <div class="overflow-x-auto">
-                    <table id="core-table">
-                        <thead>
-                            <tr>
-                                <th>Asset</th>
-                                <th class="text-right">Price</th>
-                                <th class="text-right">Chg %</th>
-                                <th class="text-right">RSI (14D)</th>
-                                <th class="text-right">Signal</th>
-                            </tr>
-                        </thead>
-                        <tbody id="core-body"></tbody>
-                    </table>
-                </div>
-            </div>
-
+        <div class="flex justify-between text-[11px] font-bold text-gray-400 mt-2">
+            <span>차갑다</span>
+            <span>뜨겁다</span>
         </div>
-    </main>
+    </div>
+
+    <div class="search-container">
+        <svg class="search-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="어떤 주식을 찾으시나요?" onkeyup="filterList()">
+    </div>
+
+    <div class="surface p-2 px-5">
+        <div id="asset-list">
+            </div>
+        <div id="no-result" class="hidden text-center py-12">
+            <p class="text-lg font-bold text-[#191f28] mb-1">결과가 없어요</p>
+            <p class="text-sm text-[#8b95a1] font-medium">검색어를 다시 한번 확인해주세요.</p>
+        </div>
+    </div>
 
     <script>
+        let globalData = [];
+
         async function fetchMarketData() {
             try {
-                const response = await fetch('./data.json?t=' + new Date().getTime());
-                const data = await response.json();
-                updateDashboard(data);
+                const res = await fetch('./data.json?v=' + new Date().getTime());
+                const json = await res.json();
+                
+                document.getElementById('sync-time').innerText = json.kst;
+                globalData = json.data;
+                
+                updateMarketTemp(json.market_temp);
+                renderList(globalData);
             } catch (error) {
-                console.error("Data load failed:", error);
-                document.getElementById('bias-text').innerText = "SYS_ERR";
+                document.getElementById('market-title').innerText = "네트워크 오류";
             }
         }
 
-        function renderRow(item, includeVol = false) {
-            if (!item || !item.ok) return '';
-            const isUp = item.change > 0;
-            const isFlat = item.change === 0;
-            const colorClass = isUp ? 'up' : isFlat ? 'neutral' : 'down';
-            const sign = isUp ? '+' : '';
+        function updateMarketTemp(temp) {
+            const title = document.getElementById('market-title');
+            const desc = document.getElementById('market-desc');
+            const bar = document.getElementById('temp-bar');
             
-            const rsiClass = item.rsi > 70 ? 'rsi-high font-bold' : item.rsi < 30 ? 'rsi-low font-bold' : 'neutral';
+            bar.style.width = temp + '%';
             
-            let html = `
-                <tr>
-                    <td class="font-semibold">${item.name}</td>
-                    <td class="text-right mono">${item.price.toLocaleString()}</td>
-                    <td class="text-right mono ${colorClass}">${sign}${item.change.toFixed(2)}%</td>
-                    <td class="text-right mono ${rsiClass}">${item.rsi.toFixed(1)}</td>
-            `;
-            
-            if (includeVol) {
-                html += `<td class="text-right mono neutral">${item.volatility.toFixed(2)}%</td>`;
+            if (temp >= 60) {
+                title.innerText = "시장이 뜨겁게 달아올랐어요 🔥";
+                desc.innerText = "상승하는 종목이 압도적으로 많아요.";
+                bar.className = "h-full transition-all duration-1000 bg-up";
+            } else if (temp <= 40) {
+                title.innerText = "시장이 얼어붙었어요 ❄️";
+                desc.innerText = "대부분의 종목이 하락하고 있어요. 신중하세요.";
+                bar.className = "h-full transition-all duration-1000 bg-down";
             } else {
-                html += `<td class="text-right mono text-xs ${rsiClass}">${item.trend.toUpperCase()}</td>`;
+                title.innerText = "시장이 숨을 고르고 있어요 ☁️";
+                desc.innerText = "오르는 종목과 내리는 종목이 비슷해요.";
+                bar.className = "h-full transition-all duration-1000 bg-flat";
             }
-            html += `</tr>`;
-            return html;
         }
 
-        function updateDashboard(data) {
-            document.getElementById('last-update').innerText = `SYNC: ${data.timestamp}`;
-            
-            const m = data.market;
-            const a = data.analytics;
-
-            // 1. Prediction Engine Update
-            const oraclePanel = document.getElementById('oracle-panel');
-            const biasText = document.getElementById('bias-text');
-            const logicText = document.getElementById('bias-logic');
-            
-            // 시그널 강도에 따른 방향성 결정
-            if (a.signal_strength > 0.5) {
-                biasText.innerText = "STRONG BULL";
-                biasText.className = "text-4xl font-extrabold mono up";
-                oraclePanel.className = "panel p-6 bg-up";
-                logicText.innerText = "반도체 모멘텀 강세 및 우호적 거시 환경(환율/금리 안정)이 결합되어 외국인 중심의 강한 매수세가 추론됩니다.";
-            } else if (a.signal_strength > 0) {
-                biasText.innerText = "LEAN BULL";
-                biasText.className = "text-4xl font-extrabold mono up";
-                logicText.innerText = "거시 지표의 하방 압력보다 기술주/반도체의 상승 모멘텀이 근소하게 우위에 있습니다. 제한적 상승이 예상됩니다.";
-            } else if (a.signal_strength < -0.5) {
-                biasText.innerText = "STRONG BEAR";
-                biasText.className = "text-4xl font-extrabold mono down";
-                oraclePanel.className = "panel p-6 bg-down";
-                logicText.innerText = "VIX 급등, 고환율 등 매크로 리스크가 기술주 모멘텀을 압도하고 있습니다. 철저한 리스크 관리가 요구됩니다.";
+        function togglePanel(index) {
+            const panel = document.getElementById('panel-' + index);
+            if (panel.classList.contains('active')) {
+                panel.classList.remove('active');
             } else {
-                biasText.innerText = "LEAN BEAR / CHOPPY";
-                biasText.className = "text-4xl font-extrabold mono down";
-                logicText.innerText = "방향성이 혼재된 구간입니다. 거시 지표의 불확실성으로 인해 장중 변동성이 확대될 가능성이 큽니다.";
+                // 열려있는 다른 패널 닫기 (선택사항)
+                document.querySelectorAll('.detail-panel').forEach(p => p.classList.remove('active'));
+                panel.classList.add('active');
             }
+        }
 
-            // Bull/Bear Pressure Bar
-            const totalPressure = a.bull_pressure + a.bear_pressure || 1;
-            const bullPct = (a.bull_pressure / totalPressure) * 100;
-            const bearPct = (a.bear_pressure / totalPressure) * 100;
+        function renderList(data) {
+            const container = document.getElementById('asset-list');
+            let html = '';
+
+            data.forEach((item, index) => {
+                const isUp = item.change > 0;
+                const isFlat = item.change === 0;
+                const colorCls = isUp ? 'color-up' : isFlat ? 'text-[#8b95a1]' : 'color-down';
+                const sign = isUp ? '+' : '';
+                
+                html += `
+                    <div class="list-item" onclick="togglePanel(${index})">
+                        <div class="flex justify-between items-center bg-white">
+                            <div>
+                                <div class="text-[17px] font-bold text-[#191f28] leading-tight">${item.name}</div>
+                                <div class="text-[13px] font-semibold text-[#8b95a1] mt-1">${item.type}</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-[17px] font-bold ${colorCls} leading-tight">${sign}${item.change}%</div>
+                                <div class="text-[14px] font-bold text-[#8b95a1] mt-1">${item.price.toLocaleString()}</div>
+                            </div>
+                        </div>
+                        
+                        <div id="panel-${index}" class="detail-panel" onclick="event.stopPropagation()">
+                            <p class="text-[13px] font-bold text-[#333d4b] mb-2 flex items-center gap-1">
+                                <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                AI 오라클 분석
+                            </p>
+                            <p class="text-[14.5px] font-semibold text-[#191f28] leading-relaxed mb-4">
+                                ${item.comment}
+                            </p>
+                            
+                            <div class="grid grid-cols-3 gap-2 border-t border-[#e5e8eb] pt-3">
+                                <div>
+                                    <div class="text-[11px] font-bold text-[#8b95a1] mb-0.5">RSI (과열도)</div>
+                                    <div class="text-[14px] font-extrabold ${item.tech.rsi >= 70 ? 'color-up' : item.tech.rsi <= 30 ? 'color-down' : 'text-[#333d4b]'}">${item.tech.rsi}</div>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] font-bold text-[#8b95a1] mb-0.5">MACD (추세)</div>
+                                    <div class="text-[14px] font-extrabold ${item.tech.macd > 0 ? 'color-up' : 'color-down'}">${item.tech.macd > 0 ? '+' : ''}${item.tech.macd}</div>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] font-bold text-[#8b95a1] mb-0.5">BB (위치)</div>
+                                    <div class="text-[14px] font-extrabold text-[#333d4b]">${item.tech.bb}%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function filterList() {
+            const query = document.getElementById('searchInput').value.toLowerCase().replace(/\s+/g, '');
+            const filtered = globalData.filter(item => {
+                const name = item.name.toLowerCase().replace(/\s+/g, '');
+                const symbol = item.symbol.toLowerCase();
+                const type = item.type.toLowerCase();
+                return name.includes(query) || symbol.includes(query) || type.includes(query);
+            });
             
-            document.getElementById('bull-bar').style.width = `${bullPct}%`;
-            document.getElementById('bear-bar').style.width = `${bearPct}%`;
-            document.getElementById('bull-val').innerText = a.bull_pressure.toFixed(1);
-            document.getElementById('bear-val').innerText = a.bear_pressure.toFixed(1);
-
-            // 2. Table Updates
-            let macroHtml = `<thead><tr><th>Indicator</th><th class="text-right">Value</th><th class="text-right">Chg %</th><th class="text-right">RSI (14D)</th><th class="text-right">Risk Lvl</th></tr></thead><tbody>`;
-            Object.values(m).filter(i => i.cat === 'macro').forEach(item => {
-                macroHtml += renderRow(item, false);
-            });
-            macroHtml += `</tbody>`;
-            document.getElementById('macro-table').innerHTML = macroHtml;
-
-            let indexHtml = '';
-            Object.values(m).filter(i => i.cat === 'index').forEach(item => {
-                indexHtml += renderRow(item, true);
-            });
-            document.getElementById('index-body').innerHTML = indexHtml;
-
-            let coreHtml = '';
-            Object.values(m).filter(i => i.cat === 'core' || i.cat === 'kr_core').forEach(item => {
-                coreHtml += renderRow(item, false);
-            });
-            document.getElementById('core-body').innerHTML = coreHtml;
+            renderList(filtered);
+            
+            if (filtered.length === 0) {
+                document.getElementById('no-result').classList.remove('hidden');
+            } else {
+                document.getElementById('no-result').classList.add('hidden');
+            }
         }
 
         fetchMarketData();
-        setInterval(fetchMarketData, 60000); // 1분 단위 화면 새로고침
+        setInterval(fetchMarketData, 60000); // 1분마다 새로고침
     </script>
 </body>
 </html>
