@@ -1,5 +1,18 @@
-yfinance
-pandas
-numpy
-pytz
-requests
+# ═══════════════════════════════════════════════════════════
+#  KOSPI ORACLE V7 — Python Dependencies
+#  ─────────────────────────────────────────────────────────
+#  Pinned with compatibility ranges for stability + security
+# ═══════════════════════════════════════════════════════════
+
+# ─── 데이터 수집 ───
+yfinance>=0.2.40,<0.3.0
+
+# ─── 데이터 분석 (수치 연산) ───
+pandas>=2.0.0,<3.0.0
+numpy>=1.24.0,<2.0.0
+
+# ─── 시간대 처리 ───
+pytz>=2024.1
+
+# ─── HTTP 통신 (Gemini API 호출용) ───
+requests>=2.31.0,<3.0.0
