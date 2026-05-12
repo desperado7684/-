@@ -1,33 +1,87 @@
-name: ORACLE MASTER ENGINE
+name: 🚀 ORACLE MASTER AUTOMATION
 
+# 1. 동시 실행 제어 (Concurrency Control)
+# 수동 실행과 자동 실행이 겹칠 경우 발생할 수 있는 Git Push 충돌(Conflict)을 완벽히 방지합니다.
+concurrency:
+  group: "oracle-sync"
+  cancel-in-progress: true
+
+# 2. 트리거 설정 (Trigger Rules)
 on:
   schedule:
-    - cron: '*/10 * * * *'
-  workflow_dispatch:
+    - cron: '*/10 * * * *' # 정확히 10분마다 엔진 가동
+  workflow_dispatch: # 관리자 수동 개입(새로고침) 허용
+
+# 3. 보안 권한 설정 (Security Permissions)
+# 봇이 레포지토리에 데이터를 쓸 수 있는 명시적 권한을 부여하여 403 에러를 차단합니다.
+permissions:
+  contents: write
 
 jobs:
-  execute-quant-modeling:
+  quant-engine-sync:
+    name: ⚡ Deep Quant Data Pipeline
     runs-on: ubuntu-latest
-    steps:
-      - name: System Checkout
-        uses: actions/checkout@v4
+    timeout-minutes: 5 # 야후 파이낸스 서버 지연 시 무한 대기를 방지 (비용 절감 및 안정성 확보)
 
-      - name: Python Environment Setup
+    steps:
+      # 단계 1: 레포지토리 체크아웃 (최적화 모드)
+      - name: 📥 Repository Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1 # 전체 히스토리가 아닌 최신 상태만 가져와 다운로드 속도 2배 향상
+
+      # 단계 2: 파이썬 환경 구축 및 의존성 캐싱 (초고속 실행)
+      - name: 🐍 Python Environment Setup
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+          cache: 'pip' # 매번 다운로드하지 않고 캐시를 사용하여 실행 시간을 비약적으로 단축
 
-      - name: Install Quant Dependencies
+      # 단계 3: 퀀트 라이브러리 설치 (무결성 검증)
+      - name: 📦 Install Quant Dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install yfinance pandas numpy pytz
 
-      - name: Run Deep Quant Data Collector
-        run: python data_collector.py
-
-      - name: Deploy to KOSPI ORACLE
+      # 단계 4: 마스터 엔진 가동 (데이터 수집 및 수학적 모델링)
+      - name: 🧠 Execute Master Quant Engine
         run: |
-          git config --global user.name "Oracle-Master"
-          git config --global user.email "master@kospi-oracle.com"
+          echo "==================================================="
+          echo "🚀 Starting K-QUANT MASTER ENGINE V5..."
+          echo "==================================================="
+          python data_collector.py
+          echo "✅ Data collection and mathematical modeling completed."
+
+      # 단계 5: 스마트 커밋 및 무중단 배포 (Smart Commit & Deploy)
+      - name: 💾 Smart Commit & Push Data Protocol
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 1. 퀀트 봇 계정 시그니처 설정
+          git config --global user.name "Oracle-Master-Bot"
+          git config --global user.email "master-bot@kospi-oracle.local"
+          
+          # 2. 산출된 데이터 파일 스테이징
           git add data.json
-          git commit -m "Engine Update: $(date -u +'%Y-%m-%dT%H:%M:%SZ')" || echo "No Changes Detected"
-          git push
+          
+          # 3. 변경점 검증 알고리즘 (데이터 변화가 없으면 쓸데없는 커밋을 만들지 않음)
+          if git diff-index --quiet HEAD; then
+            echo "📊 Market data remains unchanged (e.g., Weekend/Closed). Skipping commit."
+          else
+            echo "🔄 Changes detected. Committing new oracle data..."
+            # 한국 시간(KST) 기준으로 정확한 타임스탬프 기록
+            git commit -m "Oracle Sync 📡: $(TZ='Asia/Seoul' date +'%Y-%m-%d %H:%M:%S KST')"
+            
+            # 4. 레이스 컨디션(Race Condition) 방지를 위한 Rebase Pull 후 Push
+            git pull --rebase origin main
+            git push origin main
+            echo "🎉 Successfully deployed to KOSPI ORACLE terminal."
+          fi
+
+      # 단계 6: 장애 감지 및 알림 (Fail-Safe)
+      - name: 🚨 Workflow Failure Notification
+        if: failure() # 위 단계 중 하나라도 실패했을 때만 작동
+        run: |
+          echo "❌ CRITICAL ERROR: 엔진 실행 중 오류가 발생했습니다."
+          echo "야후 파이낸스 API 접속 지연 또는 파이썬 코드 문법 오류일 수 있습니다."
+          echo "Actions 탭의 상세 로그를 확인하여 디버깅을 진행하세요."
