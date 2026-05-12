@@ -1,160 +1,227 @@
 {
-  "timestamp": "2026-05-12 11:55:49 KST",
-  "market": {
-    "KRW=X": {
-      "name": "USD/KRW 환율",
-      "cat": "macro",
-      "price": 1484.68,
-      "change": 1.65,
-      "rsi": 49.6,
-      "volatility": 1.56,
-      "trend": "Neutral",
-      "ok": true
+  "kst": "2026년 05월 12일 12:14 기준",
+  "market_temp": 43,
+  "data": [
+    {
+      "symbol": "^KS11",
+      "name": "코스피 종합지수",
+      "type": "국내지수",
+      "price": 7782.01,
+      "change": -0.51,
+      "tech": {
+        "rsi": 92.8,
+        "macd": 118.52,
+        "bb": 95.4
+      },
+      "comment": "단기적으로 많이 올랐어요. 과열 상태일 수 있으니 추격 매수는 조심하세요. 🔥"
     },
-    "^TNX": {
-      "name": "미 국채 10년물",
-      "cat": "macro",
-      "price": 4.41,
-      "change": 1.05,
-      "rsi": 62.8,
-      "volatility": 1.16,
-      "trend": "Neutral",
-      "ok": true
+    {
+      "symbol": "005930.KS",
+      "name": "삼성전자",
+      "type": "국내주식",
+      "price": 282000.0,
+      "change": -1.23,
+      "tech": {
+        "rsi": 80.8,
+        "macd": 5949.0,
+        "bb": 97.2
+      },
+      "comment": "단기적으로 많이 올랐어요. 과열 상태일 수 있으니 추격 매수는 조심하세요. 🔥"
     },
-    "^VIX": {
-      "name": "VIX 공포지수",
-      "cat": "macro",
-      "price": 18.38,
-      "change": 6.92,
-      "rsi": 44.0,
-      "volatility": 3.79,
-      "trend": "Neutral",
-      "ok": true
+    {
+      "symbol": "000660.KS",
+      "name": "SK하이닉스",
+      "type": "국내주식",
+      "price": 1917000.0,
+      "change": 1.97,
+      "tech": {
+        "rsi": 97.7,
+        "macd": 63168.08,
+        "bb": 104.7
+      },
+      "comment": "단기적으로 많이 올랐어요. 과열 상태일 수 있으니 추격 매수는 조심하세요. 🔥"
     },
-    "DX-Y.NYB": {
-      "name": "달러 인덱스",
-      "cat": "macro",
-      "price": 98.12,
-      "change": 0.29,
-      "rsi": 46.2,
-      "volatility": 0.41,
-      "trend": "Neutral",
-      "ok": true
+    {
+      "symbol": "005380.KS",
+      "name": "현대차",
+      "type": "국내주식",
+      "price": 658000.0,
+      "change": 1.86,
+      "tech": {
+        "rsi": 76.5,
+        "macd": 12957.33,
+        "bb": 110.5
+      },
+      "comment": "단기적으로 많이 올랐어요. 과열 상태일 수 있으니 추격 매수는 조심하세요. 🔥"
     },
-    "^SOX": {
+    {
+      "symbol": "086790.KS",
+      "name": "하나금융지주",
+      "type": "국내주식",
+      "price": 124400.0,
+      "change": -1.74,
+      "tech": {
+        "rsi": 56.6,
+        "macd": 2.12,
+        "bb": 60.7
+      },
+      "comment": "뚜렷한 방향성 없이 에너지를 모으는 중이에요. 분할 매수하기 좋은 시기예요. 🧩"
+    },
+    {
+      "symbol": "035420.KS",
+      "name": "NAVER",
+      "type": "국내주식",
+      "price": 206500.0,
+      "change": -2.36,
+      "tech": {
+        "rsi": 41.7,
+        "macd": -125.3,
+        "bb": 25.0
+      },
+      "comment": "하락 추세가 이어지고 있어요. 바닥을 다질 때까지 조금 더 지켜보세요. 📉"
+    },
+    {
+      "symbol": "^SOX",
       "name": "필라델피아 반도체",
-      "cat": "index",
+      "type": "해외지수",
       "price": 12081.04,
       "change": 2.59,
-      "rsi": 79.4,
-      "volatility": 3.66,
-      "trend": "Overbought",
-      "ok": true
+      "tech": {
+        "rsi": 79.4,
+        "macd": 124.39,
+        "bb": 102.3
+      },
+      "comment": "단기적으로 많이 올랐어요. 과열 상태일 수 있으니 추격 매수는 조심하세요. 🔥"
     },
-    "^IXIC": {
-      "name": "NASDAQ",
-      "cat": "index",
+    {
+      "symbol": "^IXIC",
+      "name": "나스닥 종합",
+      "type": "해외지수",
       "price": 26274.12,
       "change": 0.1,
-      "rsi": 82.9,
-      "volatility": 1.1,
-      "trend": "Overbought",
-      "ok": true
+      "tech": {
+        "rsi": 82.9,
+        "macd": 97.99,
+        "bb": 98.3
+      },
+      "comment": "단기적으로 많이 올랐어요. 과열 상태일 수 있으니 추격 매수는 조심하세요. 🔥"
     },
-    "^GSPC": {
-      "name": "S&P 500",
-      "cat": "index",
-      "price": 7412.84,
-      "change": 0.19,
-      "rsi": 79.1,
-      "volatility": 0.8,
-      "trend": "Overbought",
-      "ok": true
-    },
-    "^N225": {
-      "name": "닛케이 225",
-      "cat": "index",
-      "price": 62805.44,
-      "change": 0.62,
-      "rsi": 67.1,
-      "volatility": 2.84,
-      "trend": "Neutral",
-      "ok": true
-    },
-    "MSFT": {
-      "name": "Microsoft",
-      "cat": "core",
+    {
+      "symbol": "MSFT",
+      "name": "마이크로소프트",
+      "type": "해외주식",
       "price": 412.66,
       "change": -0.59,
-      "rsi": 43.5,
-      "volatility": 1.32,
-      "trend": "Neutral",
-      "ok": true
+      "tech": {
+        "rsi": 43.5,
+        "macd": -1.55,
+        "bb": 36.0
+      },
+      "comment": "하락 추세가 이어지고 있어요. 바닥을 다질 때까지 조금 더 지켜보세요. 📉"
     },
-    "META": {
-      "name": "Meta Platforms",
-      "cat": "core",
+    {
+      "symbol": "META",
+      "name": "메타 (페이스북)",
+      "type": "해외주식",
       "price": 598.86,
       "change": -1.77,
-      "rsi": 26.3,
-      "volatility": 1.46,
-      "trend": "Oversold",
-      "ok": true
+      "tech": {
+        "rsi": 26.3,
+        "macd": -7.24,
+        "bb": 12.7
+      },
+      "comment": "최근 많이 떨어졌어요. 기술적 반등(저점 매수)을 노려볼 만한 구간이에요. 💡"
     },
-    "BTC-USD": {
-      "name": "Bitcoin",
-      "cat": "core",
-      "price": 81242.66,
-      "change": -1.09,
-      "rsi": 66.3,
-      "volatility": 1.2,
-      "trend": "Neutral",
-      "ok": true
+    {
+      "symbol": "NVDA",
+      "name": "엔비디아",
+      "type": "해외주식",
+      "price": 219.44,
+      "change": 1.97,
+      "tech": {
+        "rsi": 64.9,
+        "macd": 0.73,
+        "bb": 100.5
+      },
+      "comment": "단기적으로 많이 올랐어요. 과열 상태일 수 있으니 추격 매수는 조심하세요. 🔥"
     },
-    "000660.KS": {
-      "name": "SK하이닉스",
-      "cat": "kr_core",
-      "price": 1897000.0,
-      "change": 0.9,
-      "rsi": 97.7,
-      "volatility": 4.83,
-      "trend": "Overbought",
-      "ok": true
+    {
+      "symbol": "TSLA",
+      "name": "테슬라",
+      "type": "해외주식",
+      "price": 445.0,
+      "change": 3.89,
+      "tech": {
+        "rsi": 78.1,
+        "macd": 6.7,
+        "bb": 120.0
+      },
+      "comment": "단기적으로 많이 올랐어요. 과열 상태일 수 있으니 추격 매수는 조심하세요. 🔥"
     },
-    "005930.KS": {
-      "name": "삼성전자",
-      "cat": "kr_core",
-      "price": 278750.0,
-      "change": -2.36,
-      "rsi": 78.5,
-      "volatility": 3.88,
-      "trend": "Overbought",
-      "ok": true
+    {
+      "symbol": "AAPL",
+      "name": "애플",
+      "type": "해외주식",
+      "price": 292.68,
+      "change": -0.22,
+      "tech": {
+        "rsi": 78.0,
+        "macd": 1.96,
+        "bb": 96.0
+      },
+      "comment": "단기적으로 많이 올랐어요. 과열 상태일 수 있으니 추격 매수는 조심하세요. 🔥"
     },
-    "005380.KS": {
-      "name": "현대차",
-      "cat": "kr_core",
-      "price": 643000.0,
-      "change": -0.46,
-      "rsi": 74.4,
-      "volatility": 3.26,
-      "trend": "Overbought",
-      "ok": true
+    {
+      "symbol": "KRW=X",
+      "name": "원/달러 환율",
+      "type": "거시/환율",
+      "price": 1485.13,
+      "change": 1.68,
+      "tech": {
+        "rsi": 49.7,
+        "macd": -0.3,
+        "bb": 81.0
+      },
+      "comment": "시장 불안감이 커지고 있어요. 보수적인 투자가 필요한 시점이에요. 🚨"
     },
-    "^KS11": {
-      "name": "KOSPI",
-      "cat": "kr_core",
-      "price": 7713.94,
-      "change": -1.38,
-      "rsi": 89.4,
-      "volatility": 2.43,
-      "trend": "Overbought",
-      "ok": true
+    {
+      "symbol": "^TNX",
+      "name": "미 국채 10년물",
+      "type": "거시/금리",
+      "price": 4.41,
+      "change": 1.05,
+      "tech": {
+        "rsi": 62.8,
+        "macd": 0.0,
+        "bb": 78.5
+      },
+      "comment": "시장 불안감이 커지고 있어요. 보수적인 투자가 필요한 시점이에요. 🚨"
+    },
+    {
+      "symbol": "^VIX",
+      "name": "VIX 공포지수",
+      "type": "리스크",
+      "price": 18.38,
+      "change": 6.92,
+      "tech": {
+        "rsi": 44.0,
+        "macd": 0.15,
+        "bb": 59.7
+      },
+      "comment": "시장 불안감이 커지고 있어요. 보수적인 투자가 필요한 시점이에요. 🚨"
+    },
+    {
+      "symbol": "BTC-USD",
+      "name": "비트코인",
+      "type": "가상자산",
+      "price": 81202.82,
+      "change": -1.14,
+      "tech": {
+        "rsi": 66.0,
+        "macd": 60.3,
+        "bb": 81.6
+      },
+      "comment": "뚜렷한 방향성 없이 에너지를 모으는 중이에요. 분할 매수하기 좋은 시기예요. 🧩"
     }
-  },
-  "analytics": {
-    "signal_strength": -0.381,
-    "bull_pressure": 1.61,
-    "bear_pressure": 5.04
-  }
+  ]
 }
