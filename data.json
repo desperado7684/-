@@ -1,0 +1,160 @@
+{
+  "timestamp": "2026-05-12 11:55:49 KST",
+  "market": {
+    "KRW=X": {
+      "name": "USD/KRW 환율",
+      "cat": "macro",
+      "price": 1484.68,
+      "change": 1.65,
+      "rsi": 49.6,
+      "volatility": 1.56,
+      "trend": "Neutral",
+      "ok": true
+    },
+    "^TNX": {
+      "name": "미 국채 10년물",
+      "cat": "macro",
+      "price": 4.41,
+      "change": 1.05,
+      "rsi": 62.8,
+      "volatility": 1.16,
+      "trend": "Neutral",
+      "ok": true
+    },
+    "^VIX": {
+      "name": "VIX 공포지수",
+      "cat": "macro",
+      "price": 18.38,
+      "change": 6.92,
+      "rsi": 44.0,
+      "volatility": 3.79,
+      "trend": "Neutral",
+      "ok": true
+    },
+    "DX-Y.NYB": {
+      "name": "달러 인덱스",
+      "cat": "macro",
+      "price": 98.12,
+      "change": 0.29,
+      "rsi": 46.2,
+      "volatility": 0.41,
+      "trend": "Neutral",
+      "ok": true
+    },
+    "^SOX": {
+      "name": "필라델피아 반도체",
+      "cat": "index",
+      "price": 12081.04,
+      "change": 2.59,
+      "rsi": 79.4,
+      "volatility": 3.66,
+      "trend": "Overbought",
+      "ok": true
+    },
+    "^IXIC": {
+      "name": "NASDAQ",
+      "cat": "index",
+      "price": 26274.12,
+      "change": 0.1,
+      "rsi": 82.9,
+      "volatility": 1.1,
+      "trend": "Overbought",
+      "ok": true
+    },
+    "^GSPC": {
+      "name": "S&P 500",
+      "cat": "index",
+      "price": 7412.84,
+      "change": 0.19,
+      "rsi": 79.1,
+      "volatility": 0.8,
+      "trend": "Overbought",
+      "ok": true
+    },
+    "^N225": {
+      "name": "닛케이 225",
+      "cat": "index",
+      "price": 62805.44,
+      "change": 0.62,
+      "rsi": 67.1,
+      "volatility": 2.84,
+      "trend": "Neutral",
+      "ok": true
+    },
+    "MSFT": {
+      "name": "Microsoft",
+      "cat": "core",
+      "price": 412.66,
+      "change": -0.59,
+      "rsi": 43.5,
+      "volatility": 1.32,
+      "trend": "Neutral",
+      "ok": true
+    },
+    "META": {
+      "name": "Meta Platforms",
+      "cat": "core",
+      "price": 598.86,
+      "change": -1.77,
+      "rsi": 26.3,
+      "volatility": 1.46,
+      "trend": "Oversold",
+      "ok": true
+    },
+    "BTC-USD": {
+      "name": "Bitcoin",
+      "cat": "core",
+      "price": 81242.66,
+      "change": -1.09,
+      "rsi": 66.3,
+      "volatility": 1.2,
+      "trend": "Neutral",
+      "ok": true
+    },
+    "000660.KS": {
+      "name": "SK하이닉스",
+      "cat": "kr_core",
+      "price": 1897000.0,
+      "change": 0.9,
+      "rsi": 97.7,
+      "volatility": 4.83,
+      "trend": "Overbought",
+      "ok": true
+    },
+    "005930.KS": {
+      "name": "삼성전자",
+      "cat": "kr_core",
+      "price": 278750.0,
+      "change": -2.36,
+      "rsi": 78.5,
+      "volatility": 3.88,
+      "trend": "Overbought",
+      "ok": true
+    },
+    "005380.KS": {
+      "name": "현대차",
+      "cat": "kr_core",
+      "price": 643000.0,
+      "change": -0.46,
+      "rsi": 74.4,
+      "volatility": 3.26,
+      "trend": "Overbought",
+      "ok": true
+    },
+    "^KS11": {
+      "name": "KOSPI",
+      "cat": "kr_core",
+      "price": 7713.94,
+      "change": -1.38,
+      "rsi": 89.4,
+      "volatility": 2.43,
+      "trend": "Overbought",
+      "ok": true
+    }
+  },
+  "analytics": {
+    "signal_strength": -0.381,
+    "bull_pressure": 1.61,
+    "bear_pressure": 5.04
+  }
+}
