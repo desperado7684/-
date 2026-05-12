@@ -4,7 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#3182f6">
-<title>KOSPI ORACLE V8 · 종목별 예측 터미널</title>
+<title>KOSPI ORACLE V9 · 종목별 예측 터미널</title>
+
+<!-- PWA 매니페스트 -->
+<link rel="manifest" href="./manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="KOSPI Oracle">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='100' fill='%233182f6'/%3E%3Ctext x='50%25' y='52%25' font-family='-apple-system' font-size='200' font-weight='900' fill='white' text-anchor='middle' dominant-baseline='middle'%3EKO%3C/text%3E%3C/svg%3E">
+
+<!-- 다크모드 깜빡임 방지 (FOUC 방지) - 페이지 로딩 즉시 실행 -->
+<script>
+(function() {
+  try {
+    var saved = localStorage.getItem('kospi-theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  } catch(e) {}
+})();
+</script>
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
@@ -694,6 +713,250 @@ button:disabled { cursor: not-allowed; opacity: 0.5; }
 .app-footer { margin-top: var(--gap-12); padding: var(--gap-6) 0; text-align: center; }
 .footer-text { font-size: var(--font-2xs); color: var(--text-disabled); font-weight: 700; line-height: 1.6; }
 .footer-text strong { color: var(--text-subtle); }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   [V9] DARK MODE TOKENS
+═══════════════════════════════════════════════════════════════════════ */
+:root[data-theme="dark"] {
+  --bg-base:          #0d1117;
+  --bg-elevated:      #161b22;
+  --bg-subtle:        #1f2730;
+  --bg-strong:        #2d3441;
+  --bg-dim:           #14181e;
+
+  --text-strong:      #e6edf3;
+  --text-default:     #c9d1d9;
+  --text-muted:       #8b949e;
+  --text-subtle:      #768390;
+  --text-disabled:    #6e7681;
+  --text-placeholder: #484f58;
+
+  --border-base:      #30363d;
+  --border-strong:    #444c56;
+
+  --color-up:         #ff6b78;
+  --color-up-soft:    #2d1518;
+  --color-up-soft2:   #3a1a1e;
+  --color-down:       #5b9eff;
+  --color-down-soft:  #112545;
+  --color-down-soft2: #15305a;
+  --color-flat:       #768390;
+  --color-flat-soft:  #1f2730;
+
+  --color-warn:       #ffa940;
+  --color-warn-soft:  #2a1f0f;
+  --color-success:    #2ecc71;
+  --color-success-soft:#0f2818;
+
+  --cat-macro-soft:   #1f1d3a;
+  --cat-korea-soft:   #0f2545;
+  --cat-usa-soft:     #2d1518;
+  --cat-asia-soft:    #2a1f0f;
+  --cat-europe-soft:  #251a3a;
+
+  --shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-sm:  0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md:  0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg:  0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-xl:  0 16px 48px rgba(0, 0, 0, 0.55);
+}
+
+/* 다크모드에서 히어로 패널은 더 어둡게 */
+:root[data-theme="dark"] .hero-main {
+  background: linear-gradient(145deg, #050810 0%, #0d121c 50%, #14192a 100%);
+}
+:root[data-theme="dark"] .predictions-hero {
+  background: linear-gradient(135deg, #1a141a 0%, #15171c 50%, #141a26 100%);
+}
+
+/* 다크모드에서 부드러운 색상 전환 */
+body, .glass-panel, .card, .metric-card, .chart-card, .asset-list-card,
+.sub-card, .predictions-column, .modal-content, .summary-pill,
+.asset-row, .indicator-cell, .factor-item, .component-row,
+.search-input, .tab-pill, .badge-version {
+  transition: background-color var(--dur-normal) var(--ease-out),
+              border-color var(--dur-normal) var(--ease-out),
+              color var(--dur-normal) var(--ease-out);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   [V9] THEME TOGGLE BUTTON
+═══════════════════════════════════════════════════════════════════════ */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-base);
+  cursor: pointer;
+  font-size: 18px;
+  transition: all var(--dur-fast) var(--ease-out);
+  box-shadow: var(--shadow-xs);
+  position: relative;
+  overflow: hidden;
+}
+.theme-toggle:hover {
+  transform: rotate(15deg) scale(1.05);
+  box-shadow: var(--shadow-sm);
+}
+.theme-toggle:active {
+  transform: rotate(0) scale(0.95);
+}
+.theme-icon {
+  transition: opacity var(--dur-normal) var(--ease-out),
+              transform var(--dur-normal) var(--ease-out);
+}
+:root[data-theme="dark"] .icon-sun { display: inline; }
+:root[data-theme="dark"] .icon-moon { display: none; }
+:root:not([data-theme="dark"]) .icon-sun { display: none; }
+:root:not([data-theme="dark"]) .icon-moon { display: inline; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   [V9] SKELETON LOADING (스켈레톤 UI)
+═══════════════════════════════════════════════════════════════════════ */
+.skeleton-box {
+  background: linear-gradient(
+    90deg,
+    var(--bg-subtle) 0%,
+    var(--bg-strong) 40%,
+    var(--bg-strong) 60%,
+    var(--bg-subtle) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s linear infinite;
+  border-radius: var(--r-sm);
+  position: relative;
+  overflow: hidden;
+}
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.skel-bar-sm { height: 12px; }
+.skel-bar-md { height: 18px; }
+.skel-bar-lg { height: 32px; }
+.skel-bar-xl { height: 48px; }
+.skel-circle { border-radius: 50%; }
+.skel-margin-bottom { margin-bottom: var(--gap-2); }
+
+/* 스켈레톤 카드 */
+.skel-prediction-row {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: var(--gap-3);
+  align-items: center;
+  padding: var(--gap-3) var(--gap-4);
+  background: var(--bg-subtle);
+  border-radius: var(--r-md);
+  margin-bottom: var(--gap-2);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   [V9] ACCURACY HISTORY CHART
+═══════════════════════════════════════════════════════════════════════ */
+.accuracy-history-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-base);
+  border-radius: var(--r-2xl);
+  padding: var(--gap-6);
+  box-shadow: var(--shadow-xs);
+  margin-bottom: var(--gap-6);
+}
+
+.accuracy-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--gap-5);
+}
+
+.accuracy-summary-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap-3);
+  margin-bottom: var(--gap-5);
+}
+
+.accuracy-stat {
+  background: var(--bg-subtle);
+  border-radius: var(--r-md);
+  padding: var(--gap-3) var(--gap-4);
+  text-align: center;
+}
+.accuracy-stat-label {
+  font-size: var(--font-2xs);
+  font-weight: 800;
+  color: var(--text-disabled);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.accuracy-stat-value {
+  font-size: var(--font-2xl);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+  font-feature-settings: 'tnum' 1;
+}
+.accuracy-stat-value.up   { color: var(--color-success); }
+.accuracy-stat-value.down { color: var(--color-up); }
+
+.accuracy-chart-wrap { position: relative; height: 220px; }
+
+.accuracy-empty {
+  text-align: center;
+  padding: var(--gap-12) var(--gap-5);
+  color: var(--text-disabled);
+}
+.accuracy-empty-icon { font-size: 48px; margin-bottom: var(--gap-3); }
+.accuracy-empty-title { font-size: var(--font-md); font-weight: 800; color: var(--text-muted); margin-bottom: var(--gap-2); }
+.accuracy-empty-desc { font-size: var(--font-xs); color: var(--text-disabled); font-weight: 600; line-height: 1.5; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   [V9] PWA INSTALL PROMPT
+═══════════════════════════════════════════════════════════════════════ */
+.install-prompt {
+  position: fixed;
+  bottom: var(--gap-5);
+  right: var(--gap-5);
+  background: var(--text-strong);
+  color: white;
+  padding: var(--gap-3) var(--gap-5);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-lg);
+  display: none;
+  align-items: center;
+  gap: var(--gap-3);
+  z-index: 998;
+  animation: slide-up-prompt var(--dur-slow) var(--ease-out);
+  max-width: 300px;
+}
+.install-prompt.show { display: flex; }
+@keyframes slide-up-prompt {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+.install-prompt-text { font-size: var(--font-sm); font-weight: 700; flex: 1; line-height: 1.4; }
+.install-prompt-btn {
+  background: white;
+  color: var(--text-strong);
+  border-radius: var(--r-sm);
+  padding: 6px 12px;
+  font-size: var(--font-xs);
+  font-weight: 800;
+}
+.install-prompt-close {
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  font-size: 14px;
+  color: white;
+}
+
 </style>
 </head>
 <body>
@@ -716,12 +979,18 @@ button:disabled { cursor: not-allowed; opacity: 0.5; }
         <span>📡 데이터 기준</span>
         <strong id="syncTime">--:--:--</strong>
       </div>
-      <button class="btn-refresh" id="refreshBtn" onclick="bootSystem()">
-        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-        </svg>
-        <span>새로고침</span>
-      </button>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="테마 전환" title="라이트/다크 모드 전환">
+          <span class="theme-icon icon-moon">🌙</span>
+          <span class="theme-icon icon-sun">☀️</span>
+        </button>
+        <button class="btn-refresh" id="refreshBtn" onclick="bootSystem()">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+          </svg>
+          <span>새로고침</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -892,6 +1161,44 @@ button:disabled { cursor: not-allowed; opacity: 0.5; }
     </div>
   </section>
 
+  <!-- ★★★ V9 NEW: 예측 적중률 시계열 차트 ★★★ -->
+  <section class="accuracy-history-card">
+    <div class="accuracy-history-header">
+      <div class="chart-title-block">
+        <span class="chart-title">🎯 예측 적중 히스토리</span>
+        <span class="chart-subtitle">예측 방향 vs 실제 KOSPI 결과 (최근 30일)</span>
+      </div>
+    </div>
+
+    <div class="accuracy-summary-row">
+      <div class="accuracy-stat">
+        <div class="accuracy-stat-label">전체 적중률</div>
+        <div class="accuracy-stat-value" id="accHistAll">--%</div>
+      </div>
+      <div class="accuracy-stat">
+        <div class="accuracy-stat-label">상승 예측 적중</div>
+        <div class="accuracy-stat-value up" id="accHistUp">--</div>
+      </div>
+      <div class="accuracy-stat">
+        <div class="accuracy-stat-label">하락 예측 적중</div>
+        <div class="accuracy-stat-value down" id="accHistDown">--</div>
+      </div>
+      <div class="accuracy-stat">
+        <div class="accuracy-stat-label">평균 절대 오차</div>
+        <div class="accuracy-stat-value" id="accHistMae">--</div>
+      </div>
+    </div>
+
+    <div class="accuracy-chart-wrap" id="accuracyChartWrap">
+      <div class="accuracy-empty">
+        <div class="accuracy-empty-icon">📈</div>
+        <div class="accuracy-empty-title">아직 검증된 예측이 없습니다</div>
+        <div class="accuracy-empty-desc">매일 자정 KST에 GitHub Actions가<br>전날 예측과 실제 결과를 자동 비교합니다.<br>최소 3일 이상 데이터가 쌓이면 차트가 표시됩니다.</div>
+      </div>
+      <canvas id="accuracyChart" style="display:none;"></canvas>
+    </div>
+  </section>
+
   <!-- ─── CHARTS ─── -->
   <section class="charts-grid">
     <div class="chart-card">
@@ -971,6 +1278,13 @@ button:disabled { cursor: not-allowed; opacity: 0.5; }
 
 <!-- ─── TOAST ─── -->
 <div class="toast-container" id="toastContainer"></div>
+
+<!-- ★★★ V9: PWA 설치 프롬프트 ★★★ -->
+<div class="install-prompt" id="installPrompt">
+  <div class="install-prompt-text">📱 홈 화면에 추가하여 앱처럼 사용하세요</div>
+  <button class="install-prompt-btn" onclick="triggerInstall()">설치</button>
+  <button class="install-prompt-close" onclick="dismissInstall()">✕</button>
+</div>
 
 <script>
 'use strict';
@@ -1515,15 +1829,15 @@ function renderTrendChart() {
       plugins: {
         legend: { display: false },
         tooltip: {
-          backgroundColor: '#191f28', padding: 12,
+          backgroundColor: chartTooltipBg(), padding: 12,
           titleFont: { weight: 700, size: 11 }, bodyFont: { weight: 800, size: 14 },
           cornerRadius: 8, displayColors: false,
           callbacks: { label: c => `${c.parsed.y}${currentTrendMode === 'score' ? '점' : '°C'}` },
         },
       },
       scales: {
-        x: { grid: { display: false }, ticks: { color: '#8b95a1', font: { size: 10, weight: 700 }, maxTicksLimit: 8 } },
-        y: { beginAtZero: true, max: 100, grid: { color: '#f2f4f6', drawBorder: false }, ticks: { color: '#8b95a1', font: { size: 10, weight: 700 }, stepSize: 25 } },
+        x: { grid: { display: false }, ticks: { color: chartTickColor(), font: { size: 10, weight: 700 }, maxTicksLimit: 8 } },
+        y: { beginAtZero: true, max: 100, grid: { color: chartGridColor(), drawBorder: false }, ticks: { color: chartTickColor(), font: { size: 10, weight: 700 }, stepSize: 25 } },
       },
     },
   };
@@ -1553,15 +1867,15 @@ function renderImpactChart() {
       plugins: {
         legend: { display: false },
         tooltip: {
-          backgroundColor: '#191f28', padding: 12,
+          backgroundColor: chartTooltipBg(), padding: 12,
           titleFont: { weight: 700, size: 11 }, bodyFont: { weight: 800, size: 14 },
           cornerRadius: 8, displayColors: false,
           callbacks: { label: c => `${c.parsed.x > 0 ? '+' : ''}${c.parsed.x.toFixed(2)}%` },
         },
       },
       scales: {
-        x: { grid: { color: '#f2f4f6', drawBorder: false }, ticks: { color: '#8b95a1', font: { size: 10, weight: 700 }, callback: v => `${v > 0 ? '+' : ''}${v}%` } },
-        y: { grid: { display: false }, ticks: { color: '#4e5968', font: { size: 11, weight: 700 } } },
+        x: { grid: { color: chartGridColor(), drawBorder: false }, ticks: { color: chartTickColor(), font: { size: 10, weight: 700 }, callback: v => `${v > 0 ? '+' : ''}${v}%` } },
+        y: { grid: { display: false }, ticks: { color: chartTickColor(), font: { size: 11, weight: 700 } } },
       },
     },
   };
@@ -1865,6 +2179,359 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  [V9] DARK MODE TOGGLE
+// ═══════════════════════════════════════════════════════════════════════════
+function toggleTheme() {
+  const root = document.documentElement;
+  const current = root.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+
+  if (next === 'dark') {
+    root.setAttribute('data-theme', 'dark');
+  } else {
+    root.removeAttribute('data-theme');
+  }
+  localStorage.setItem('kospi-theme', next);
+
+  // 차트 색상 재적용 (다크모드는 다른 그리드 컬러 사용)
+  if (State.charts.trend)    { State.charts.trend.destroy();    State.charts.trend = null; }
+  if (State.charts.impact)   { State.charts.impact.destroy();   State.charts.impact = null; }
+  if (State.charts.accuracy) { State.charts.accuracy.destroy(); State.charts.accuracy = null; }
+  renderCharts();
+  renderAccuracyChart();
+
+  showToast(next === 'dark' ? '🌙 다크 모드로 전환' : '☀️ 라이트 모드로 전환');
+}
+
+function isDarkMode() {
+  return document.documentElement.getAttribute('data-theme') === 'dark';
+}
+
+function chartGridColor() {
+  return isDarkMode() ? 'rgba(255,255,255,0.06)' : '#f2f4f6';
+}
+function chartTickColor() {
+  return isDarkMode() ? '#8b949e' : '#8b95a1';
+}
+function chartTooltipBg() {
+  return isDarkMode() ? '#1f2730' : '#191f28';
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  [V9] SKELETON UI
+// ═══════════════════════════════════════════════════════════════════════════
+function showSkeletons() {
+  // TOP 5 상승/하락 카드 스켈레톤
+  const skelRows = Array(5).fill(0).map(() => `
+    <div class="skel-prediction-row">
+      <div class="skeleton-box skel-circle" style="width:24px;height:24px;"></div>
+      <div style="flex:1;">
+        <div class="skeleton-box skel-bar-md skel-margin-bottom" style="width:60%;"></div>
+        <div class="skeleton-box skel-bar-sm" style="width:40%;"></div>
+      </div>
+      <div style="text-align:right;">
+        <div class="skeleton-box skel-bar-md skel-margin-bottom" style="width:60px;margin-left:auto;"></div>
+        <div class="skeleton-box skel-bar-sm" style="width:80px;margin-left:auto;"></div>
+      </div>
+    </div>
+  `).join('');
+  const bullList = document.getElementById('topBullishList');
+  const bearList = document.getElementById('topBearishList');
+  if (bullList) bullList.innerHTML = skelRows;
+  if (bearList) bearList.innerHTML = skelRows;
+
+  // 자산 리스트 스켈레톤
+  const skelAssets = Array(6).fill(0).map(() => `
+    <div class="asset-row">
+      <div class="asset-summary">
+        <div class="asset-name-block">
+          <div class="skeleton-box skel-bar-lg skel-margin-bottom" style="width:180px;"></div>
+          <div class="skeleton-box skel-bar-sm" style="width:120px;"></div>
+        </div>
+        <div class="asset-value-block">
+          <div class="skeleton-box skel-bar-lg skel-margin-bottom" style="width:80px;margin-left:auto;"></div>
+          <div class="skeleton-box skel-bar-sm" style="width:100px;margin-left:auto;"></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  const container = document.getElementById('assetContainer');
+  if (container) container.innerHTML = skelAssets;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  [V9] ACCURACY HISTORY CHART
+// ═══════════════════════════════════════════════════════════════════════════
+function renderAccuracyChart() {
+  const logs = State.predictionLog || [];
+  // is_correct가 명시적으로 true/false인 로그만 (null 제외)
+  const verified = logs.filter(l => l.is_correct === true || l.is_correct === false);
+
+  const chartWrap = document.getElementById('accuracyChartWrap');
+  const canvas    = document.getElementById('accuracyChart');
+  const emptyDiv  = chartWrap.querySelector('.accuracy-empty');
+
+  // ── 통계 계산 ──
+  if (verified.length === 0) {
+    document.getElementById('accHistAll').textContent  = '--%';
+    document.getElementById('accHistUp').textContent   = '--';
+    document.getElementById('accHistDown').textContent = '--';
+    document.getElementById('accHistMae').textContent  = '--';
+
+    if (emptyDiv) emptyDiv.style.display = '';
+    if (canvas) canvas.style.display = 'none';
+    if (State.charts.accuracy) {
+      State.charts.accuracy.destroy();
+      State.charts.accuracy = null;
+    }
+    return;
+  }
+
+  // 전체 적중률
+  const correct = verified.filter(l => l.is_correct === true);
+  const accPct = Math.round((correct.length / verified.length) * 100);
+
+  // 상승/하락 예측별 적중
+  const upPreds   = verified.filter(l => l.predicted_direction === 'UP');
+  const downPreds = verified.filter(l => l.predicted_direction === 'DOWN');
+  const upCorrect   = upPreds.filter(l => l.is_correct === true).length;
+  const downCorrect = downPreds.filter(l => l.is_correct === true).length;
+
+  // MAE (평균 절대 오차) - 실제 변동률이 있는 경우만
+  const withActual = verified.filter(l => typeof l.actual_kospi_close_pct === 'number');
+  let mae = null;
+  if (withActual.length > 0) {
+    // 예측 변동률 추정: score 50 기준 ±1.5% 선형 매핑
+    const errors = withActual.map(l => {
+      const predEstimate = ((l.score || 50) - 50) / 50 * 1.5;
+      return Math.abs(predEstimate - l.actual_kospi_close_pct);
+    });
+    mae = errors.reduce((a, b) => a + b, 0) / errors.length;
+  }
+
+  document.getElementById('accHistAll').textContent = `${accPct}%`;
+  document.getElementById('accHistUp').textContent = upPreds.length > 0 ? `${upCorrect}/${upPreds.length}` : '0/0';
+  document.getElementById('accHistDown').textContent = downPreds.length > 0 ? `${downCorrect}/${downPreds.length}` : '0/0';
+  document.getElementById('accHistMae').textContent = mae !== null ? `±${mae.toFixed(2)}%` : '--';
+
+  // ── 데이터 3개 미만이면 빈 상태 유지 ──
+  if (verified.length < 3) {
+    if (emptyDiv) emptyDiv.style.display = '';
+    if (canvas) canvas.style.display = 'none';
+    return;
+  }
+
+  if (emptyDiv) emptyDiv.style.display = 'none';
+  if (canvas) canvas.style.display = '';
+
+  // ── 차트 데이터 (최근 30일) ──
+  const recent = verified.slice(-30);
+  const labels = recent.map(l => l.date ? l.date.slice(5) : '?');  // MM-DD
+  const predScores = recent.map(l => l.score || 50);
+  const actualPct = recent.map(l => l.actual_kospi_close_pct);
+
+  // 예측 점수를 -1.5% ~ +1.5% 변동률로 정규화 (실제 결과와 같은 단위)
+  const predPct = predScores.map(s => parseFloat((((s - 50) / 50 * 1.5)).toFixed(2)));
+
+  // 적중/미스 포인트 색상
+  const pointColors = recent.map(l =>
+    l.is_correct === true ? (isDarkMode() ? '#2ecc71' : '#00d26a') :
+    l.is_correct === false ? (isDarkMode() ? '#ff6b78' : '#f04452') :
+    '#8b95a1'
+  );
+
+  if (State.charts.accuracy) State.charts.accuracy.destroy();
+  State.charts.accuracy = new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: '예측 변동률 (%)',
+          data: predPct,
+          borderColor: isDarkMode() ? '#5b9eff' : '#3182f6',
+          backgroundColor: 'transparent',
+          borderWidth: 2,
+          borderDash: [6, 4],
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          pointBackgroundColor: 'transparent',
+          pointBorderColor: isDarkMode() ? '#5b9eff' : '#3182f6',
+          pointBorderWidth: 2,
+          tension: 0.3,
+        },
+        {
+          label: '실제 변동률 (%)',
+          data: actualPct,
+          borderColor: isDarkMode() ? '#e6edf3' : '#191f28',
+          backgroundColor: isDarkMode() ? 'rgba(230,237,243,0.08)' : 'rgba(25,31,40,0.05)',
+          borderWidth: 2.5,
+          fill: true,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          pointBackgroundColor: pointColors,
+          pointBorderColor: 'white',
+          pointBorderWidth: 2,
+          tension: 0.3,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          align: 'end',
+          labels: {
+            color: chartTickColor(),
+            font: { size: 11, weight: 700 },
+            usePointStyle: true,
+            padding: 12,
+          },
+        },
+        tooltip: {
+          backgroundColor: chartTooltipBg(),
+          padding: 12,
+          titleFont: { weight: 700, size: 11 },
+          bodyFont: { weight: 800, size: 13 },
+          cornerRadius: 8,
+          displayColors: true,
+          callbacks: {
+            label: c => {
+              const sign = c.parsed.y > 0 ? '+' : '';
+              return ` ${c.dataset.label}: ${sign}${c.parsed.y?.toFixed(2)}%`;
+            },
+            afterBody: (items) => {
+              const idx = items[0].dataIndex;
+              const log = recent[idx];
+              if (log.is_correct === true) return '✅ 적중';
+              if (log.is_correct === false) return '❌ 미스';
+              return '';
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { color: chartTickColor(), font: { size: 10, weight: 700 }, maxTicksLimit: 10 },
+        },
+        y: {
+          grid: { color: chartGridColor(), drawBorder: false },
+          ticks: {
+            color: chartTickColor(),
+            font: { size: 10, weight: 700 },
+            callback: v => `${v > 0 ? '+' : ''}${v}%`,
+          },
+        },
+      },
+    },
+  });
+}
+
+// 기존 renderCharts에 적중률 차트 추가
+const _originalRenderCharts = renderCharts;
+renderCharts = function() {
+  _originalRenderCharts();
+  renderAccuracyChart();
+};
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  [V9] PWA INSTALL PROMPT
+// ═══════════════════════════════════════════════════════════════════════════
+let deferredInstallPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+
+  // 한 번 거절한 사용자는 7일간 안 보이게
+  const dismissed = localStorage.getItem('kospi-install-dismissed');
+  if (dismissed) {
+    const dismissedTime = parseInt(dismissed, 10);
+    if (Date.now() - dismissedTime < 7 * 24 * 60 * 60 * 1000) return;
+  }
+
+  // 3초 후 프롬프트 표시
+  setTimeout(() => {
+    const prompt = document.getElementById('installPrompt');
+    if (prompt) prompt.classList.add('show');
+  }, 3000);
+});
+
+async function triggerInstall() {
+  if (!deferredInstallPrompt) {
+    showToast('이미 설치되었거나 지원되지 않는 브라우저입니다');
+    return;
+  }
+  deferredInstallPrompt.prompt();
+  const { outcome } = await deferredInstallPrompt.userChoice;
+  if (outcome === 'accepted') {
+    showToast('✅ 홈 화면에 추가되었습니다', 'success');
+  }
+  deferredInstallPrompt = null;
+  document.getElementById('installPrompt').classList.remove('show');
+}
+
+function dismissInstall() {
+  document.getElementById('installPrompt').classList.remove('show');
+  localStorage.setItem('kospi-install-dismissed', Date.now().toString());
+}
+
+// 이미 설치된 경우 감지
+window.addEventListener('appinstalled', () => {
+  showToast('✅ KOSPI Oracle이 설치되었습니다', 'success');
+  document.getElementById('installPrompt').classList.remove('show');
+});
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  [V9] SERVICE WORKER 등록
+// ═══════════════════════════════════════════════════════════════════════════
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').then(reg => {
+      console.log('[PWA] Service Worker 등록 성공:', reg.scope);
+
+      // 업데이트 감지
+      reg.addEventListener('updatefound', () => {
+        const newSW = reg.installing;
+        if (newSW) {
+          newSW.addEventListener('statechange', () => {
+            if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+              showToast('🔄 새 버전이 있습니다. 새로고침해주세요');
+            }
+          });
+        }
+      });
+    }).catch(err => {
+      console.warn('[PWA] Service Worker 등록 실패:', err);
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  [V9] State에 accuracy 차트 추가 및 chart 색상 함수 적용
+// ═══════════════════════════════════════════════════════════════════════════
+if (!State.charts.accuracy) State.charts.accuracy = null;
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  [V9] bootSystem 진입 시 스켈레톤 표시 (한 번만)
+// ═══════════════════════════════════════════════════════════════════════════
+const _originalBootSystem = bootSystem;
+let _isFirstBoot = true;
+bootSystem = async function() {
+  if (_isFirstBoot) {
+    showSkeletons();
+    _isFirstBoot = false;
+  }
+  return _originalBootSystem();
+};
+
 
 </script>
 </body>
