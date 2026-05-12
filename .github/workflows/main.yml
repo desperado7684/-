@@ -1,0 +1,33 @@
+name: Quant Engine Automation
+
+on:
+  schedule:
+    - cron: '*/10 * * * *' # 10분 주기 정밀 타격
+  workflow_dispatch:
+
+jobs:
+  execute-quant-model:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Initialize Python Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Quant Libraries
+        run: |
+          pip install yfinance pandas numpy pytz
+
+      - name: Run Multi-Factor Predictive Engine
+        run: python data_collector.py
+
+      - name: Deploy Data Protocol
+        run: |
+          git config --global user.name "Quant-Algorithm"
+          git config --global user.email "system@quant-terminal.local"
+          git add data.json
+          git commit -m "Engine Sync: $(date -u +'%Y-%m-%dT%H:%M:%SZ')" || echo "Data Unchanged"
+          git push
