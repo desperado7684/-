@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Quant Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #0d1117; color: #c9d1d9; font-family: 'Inter', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .panel { background: #161b22; border: 1px solid #30363d; border-radius: 8px; }
+        .up { color: #3fb950; }
+        .down { color: #f85149; }
+        .neutral { color: #8b949e; }
+        .bg-up { background-color: rgba(63, 185, 80, 0.1); border-left: 3px solid #3fb950; }
+        .bg-down { background-color: rgba(248, 81, 73, 0.1); border-left: 3px solid #f85149; }
+        .rsi-high { color: #f85149; } /* Overbought */
+        .rsi-low { color: #3fb950; } /* Oversold */
+        
+        table { width: 100%; text-align: left; border-collapse: collapse; }
+        th { font-size: 0.75rem; text-transform: uppercase; color: #8b949e; padding: 12px 16px; border-bottom: 1px solid #30363d; font-weight: 600; letter-spacing: 0.05em; }
+        td { padding: 12px 16px; border-bottom: 1px solid #21262d; font-size: 0.875rem; }
+        tr:hover td { background-color: #1f242c; }
+    </style>
+</head>
+<body class="p-6 md:p-10">
+
+    <header class="max-w-7xl mx-auto flex justify-between items-end mb-8 border-b border-[#30363d] pb-6">
+        <div>
+            <h1 class="text-3xl font-bold text-white tracking-tight">K-QUANT <span class="text-blue-500">TERMINAL</span></h1>
+            <p class="text-sm text-[#8b949e] mt-2 mono">MULTI-FACTOR PREDICTIVE ENGINE V3</p>
+        </div>
+        <div class="text-right mono text-xs text-[#8b949e]">
+            <div id="sys-status" class="flex items-center justify-end gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> ONLINE
+            </div>
+            <div id="last-update">SYNC: --:--:-- KST</div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-3 gap-6">
+        
+        <div class="xl:col-span-1 space-y-6">
+            
+            <div class="panel p-6" id="oracle-panel">
+                <h2 class="text-xs font-bold text-[#8b949e] uppercase tracking-wider mb-4">KOSPI Directional Bias</h2>
+                <div class="flex items-baseline gap-4 mb-2">
+                    <span id="bias-text" class="text-4xl font-extrabold mono text-white">--</span>
+                </div>
+                <div class="w-full bg-[#0d1117] h-3 rounded mt-4 overflow-hidden flex border border-[#30363d]">
+                    <div id="bull-bar" class="h-full bg-green-500" style="width: 50%"></div>
+                    <div id="bear-bar" class="h-full bg-red-500" style="width: 50%"></div>
+                </div>
+                <div class="flex justify-between text-xs mono mt-2 text-[#8b949e]">
+                    <span>BULL <span id="bull-val">0</span></span>
+                    <span>BEAR <span id="bear-val">0</span></span>
+                </div>
+                <p id="bias-logic" class="mt-6 text-sm text-[#c9d1d9] leading-relaxed">Initializing multi-factor model...</p>
+            </div>
+
+            <div class="panel">
+                <h2 class="text-xs font-bold text-[#8b949e] uppercase tracking-wider p-5 border-b border-[#30363d]">Macro & Yields (Inverted Risk)</h2>
+                <div class="overflow-x-auto">
+                    <table id="macro-table">
+                        </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="xl:col-span-2 space-y-6">
+            
+            <div class="panel">
+                <h2 class="text-xs font-bold text-[#8b949e] uppercase tracking-wider p-5 border-b border-[#30363d]">Global Indices & Tech Drivers</h2>
+                <div class="overflow-x-auto">
+                    <table id="index-table">
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th class="text-right">Price</th>
+                                <th class="text-right">Chg %</th>
+                                <th class="text-right">RSI (14D)</th>
+                                <th class="text-right">Vol (5D)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="index-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2 class="text-xs font-bold text-[#8b949e] uppercase tracking-wider p-5 border-b border-[#30363d]">Core Fundamentals Tracker</h2>
+                <div class="overflow-x-auto">
+                    <table id="core-table">
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th class="text-right">Price</th>
+                                <th class="text-right">Chg %</th>
+                                <th class="text-right">RSI (14D)</th>
+                                <th class="text-right">Signal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="core-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        async function fetchMarketData() {
+            try {
+                const response = await fetch('./data.json?t=' + new Date().getTime());
+                const data = await response.json();
+                updateDashboard(data);
+            } catch (error) {
+                console.error("Data load failed:", error);
+                document.getElementById('bias-text').innerText = "SYS_ERR";
+            }
+        }
+
+        function renderRow(item, includeVol = false) {
+            if (!item || !item.ok) return '';
+            const isUp = item.change > 0;
+            const isFlat = item.change === 0;
+            const colorClass = isUp ? 'up' : isFlat ? 'neutral' : 'down';
+            const sign = isUp ? '+' : '';
+            
+            const rsiClass = item.rsi > 70 ? 'rsi-high font-bold' : item.rsi < 30 ? 'rsi-low font-bold' : 'neutral';
+            
+            let html = `
+                <tr>
+                    <td class="font-semibold">${item.name}</td>
+                    <td class="text-right mono">${item.price.toLocaleString()}</td>
+                    <td class="text-right mono ${colorClass}">${sign}${item.change.toFixed(2)}%</td>
+                    <td class="text-right mono ${rsiClass}">${item.rsi.toFixed(1)}</td>
+            `;
+            
+            if (includeVol) {
+                html += `<td class="text-right mono neutral">${item.volatility.toFixed(2)}%</td>`;
+            } else {
+                html += `<td class="text-right mono text-xs ${rsiClass}">${item.trend.toUpperCase()}</td>`;
+            }
+            html += `</tr>`;
+            return html;
+        }
+
+        function updateDashboard(data) {
+            document.getElementById('last-update').innerText = `SYNC: ${data.timestamp}`;
+            
+            const m = data.market;
+            const a = data.analytics;
+
+            // 1. Prediction Engine Update
+            const oraclePanel = document.getElementById('oracle-panel');
+            const biasText = document.getElementById('bias-text');
+            const logicText = document.getElementById('bias-logic');
+            
+            // 시그널 강도에 따른 방향성 결정
+            if (a.signal_strength > 0.5) {
+                biasText.innerText = "STRONG BULL";
+                biasText.className = "text-4xl font-extrabold mono up";
+                oraclePanel.className = "panel p-6 bg-up";
+                logicText.innerText = "반도체 모멘텀 강세 및 우호적 거시 환경(환율/금리 안정)이 결합되어 외국인 중심의 강한 매수세가 추론됩니다.";
+            } else if (a.signal_strength > 0) {
+                biasText.innerText = "LEAN BULL";
+                biasText.className = "text-4xl font-extrabold mono up";
+                logicText.innerText = "거시 지표의 하방 압력보다 기술주/반도체의 상승 모멘텀이 근소하게 우위에 있습니다. 제한적 상승이 예상됩니다.";
+            } else if (a.signal_strength < -0.5) {
+                biasText.innerText = "STRONG BEAR";
+                biasText.className = "text-4xl font-extrabold mono down";
+                oraclePanel.className = "panel p-6 bg-down";
+                logicText.innerText = "VIX 급등, 고환율 등 매크로 리스크가 기술주 모멘텀을 압도하고 있습니다. 철저한 리스크 관리가 요구됩니다.";
+            } else {
+                biasText.innerText = "LEAN BEAR / CHOPPY";
+                biasText.className = "text-4xl font-extrabold mono down";
+                logicText.innerText = "방향성이 혼재된 구간입니다. 거시 지표의 불확실성으로 인해 장중 변동성이 확대될 가능성이 큽니다.";
+            }
+
+            // Bull/Bear Pressure Bar
+            const totalPressure = a.bull_pressure + a.bear_pressure || 1;
+            const bullPct = (a.bull_pressure / totalPressure) * 100;
+            const bearPct = (a.bear_pressure / totalPressure) * 100;
+            
+            document.getElementById('bull-bar').style.width = `${bullPct}%`;
+            document.getElementById('bear-bar').style.width = `${bearPct}%`;
+            document.getElementById('bull-val').innerText = a.bull_pressure.toFixed(1);
+            document.getElementById('bear-val').innerText = a.bear_pressure.toFixed(1);
+
+            // 2. Table Updates
+            let macroHtml = `<thead><tr><th>Indicator</th><th class="text-right">Value</th><th class="text-right">Chg %</th><th class="text-right">RSI (14D)</th><th class="text-right">Risk Lvl</th></tr></thead><tbody>`;
+            Object.values(m).filter(i => i.cat === 'macro').forEach(item => {
+                macroHtml += renderRow(item, false);
+            });
+            macroHtml += `</tbody>`;
+            document.getElementById('macro-table').innerHTML = macroHtml;
+
+            let indexHtml = '';
+            Object.values(m).filter(i => i.cat === 'index').forEach(item => {
+                indexHtml += renderRow(item, true);
+            });
+            document.getElementById('index-body').innerHTML = indexHtml;
+
+            let coreHtml = '';
+            Object.values(m).filter(i => i.cat === 'core' || i.cat === 'kr_core').forEach(item => {
+                coreHtml += renderRow(item, false);
+            });
+            document.getElementById('core-body').innerHTML = coreHtml;
+        }
+
+        fetchMarketData();
+        setInterval(fetchMarketData, 60000); // 1분 단위 화면 새로고침
+    </script>
+</body>
+</html>
