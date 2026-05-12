@@ -1,33 +1,33 @@
-name: Quant Engine Automation
+name: KOSPI ORACLE Auto Sync
 
 on:
   schedule:
-    - cron: '*/10 * * * *' # 10분 주기 정밀 타격
+    - cron: '*/10 * * * *' # 10분마다 엔진 가동
   workflow_dispatch:
 
 jobs:
-  execute-quant-model:
+  run-data-engine:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Initialize Python Environment
-        uses: actions/setup-python@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Install Quant Libraries
+      - name: Install Requirements
         run: |
           pip install yfinance pandas numpy pytz
 
-      - name: Run Multi-Factor Predictive Engine
+      - name: Collect Data & Generate AI Comments
         run: python data_collector.py
 
-      - name: Deploy Data Protocol
+      - name: Deploy to Server
         run: |
-          git config --global user.name "Quant-Algorithm"
-          git config --global user.email "system@quant-terminal.local"
+          git config --global user.name "Oracle-Bot"
+          git config --global user.email "bot@kospi-oracle.com"
           git add data.json
-          git commit -m "Engine Sync: $(date -u +'%Y-%m-%dT%H:%M:%SZ')" || echo "Data Unchanged"
+          git commit -m "Auto Sync: $(date -u +'%Y-%m-%dT%H:%M:%SZ')" || echo "No changes"
           git push
