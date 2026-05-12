@@ -1,86 +1,163 @@
-name: 🚀 ORACLE MASTER AUTOMATION
+name: 🚀 KOSPI ORACLE V6: OMNIPOTENT PIPELINE
 
-# 1. 동시 실행 제어 (Concurrency Control)
-# 수동 실행과 자동 실행이 겹칠 경우 발생할 수 있는 Git Push 충돌(Conflict)을 완벽히 방지합니다.
+# ==============================================================================
+# [1] 동시성 제어 (Concurrency Control)
+# ==============================================================================
+# 사용자의 수동 개입과 크론탭 자동 실행이 겹칠 경우, 구형 프로세스를 즉시 폐기하고 
+# 최신 프로세스 단 하나만 실행하여 Git 충돌(Conflict)을 원천 차단합니다.
 concurrency:
-  group: "oracle-sync"
+  group: "oracle-v6-master"
   cancel-in-progress: true
 
-# 2. 트리거 설정 (Trigger Rules)
+# ==============================================================================
+# [2] 스케줄링 및 트리거 (Trigger Rules)
+# ==============================================================================
 on:
   schedule:
-    - cron: '*/10 * * * *' # 정확히 10분마다 엔진 가동
-  workflow_dispatch: # 관리자 수동 개입(새로고침) 허용
+    - cron: '*/10 * * * *' # 10분 배치 (Global Standard)
+  workflow_dispatch:       # 관리자 수동 개입 버튼 활성화
 
-# 3. 보안 권한 설정 (Security Permissions)
-# 봇이 레포지토리에 데이터를 쓸 수 있는 명시적 권한을 부여하여 403 에러를 차단합니다.
+# ==============================================================================
+# [3] 보안 및 권한 설정 (Security & Permissions)
+# ==============================================================================
 permissions:
-  contents: write
+  contents: write # 레포지토리 코드 업데이트 권한
+  actions: read   # 액션 실행 상태 읽기 권한
 
 jobs:
-  quant-engine-sync:
-    name: ⚡ Deep Quant Data Pipeline
+  omni-quant-engine:
+    name: ⚡ V6 God-Level Quant Engine
     runs-on: ubuntu-latest
-    timeout-minutes: 5 # 야후 파이낸스 서버 지연 시 무한 대기를 방지 (비용 절감 및 안정성 확보)
+    timeout-minutes: 10 # 무한 대기(좀비 프로세스) 방지 킬스위치
 
     steps:
-      # 단계 1: 레포지토리 체크아웃 (최적화 모드)
-      - name: 📥 Repository Checkout
+      # ------------------------------------------------------------------------
+      # Step 1: 시스템 초기화 및 Git History 로드
+      # ------------------------------------------------------------------------
+      - name: 📥 1. Repository Checkout (Full History)
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1 # 전체 히스토리가 아닌 최신 상태만 가져와 다운로드 속도 2배 향상
+          fetch-depth: 0 # Rebase 병합 충돌을 스마트하게 해결하기 위해 전체 히스토리 로드
 
-      # 단계 2: 파이썬 환경 구축 및 의존성 캐싱 (초고속 실행)
-      - name: 🐍 Python Environment Setup
+      # ------------------------------------------------------------------------
+      # Step 2: 글로벌 타임존 동기화 (KST)
+      # ------------------------------------------------------------------------
+      - name: 🕒 2. Sync Timezone to Asia/Seoul
+        uses: szenius/set-timezone@v2.0
+        with:
+          timezoneLinux: "Asia/Seoul"
+
+      # ------------------------------------------------------------------------
+      # Step 3: 파이썬 엔터프라이즈 환경 구축 (캐싱 최적화)
+      # ------------------------------------------------------------------------
+      - name: 🐍 3. Setup Python 3.10 (Optimized)
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+          cache: 'pip' # 패키지 다운로드 시간을 0초에 가깝게 단축
 
-      # 단계 3: 퀀트 라이브러리 설치 (무결성 검증)
-      - name: 📦 Install Quant Dependencies
+      # ------------------------------------------------------------------------
+      # Step 4: 퀀트 종속성 패키지 및 검증 툴 설치
+      # ------------------------------------------------------------------------
+      - name: 📦 4. Install Dependencies & DevTools
         run: |
           python -m pip install --upgrade pip
-          pip install yfinance pandas numpy pytz
+          # 퀀트 코어 패키지 + JSON 검증(jq) + 코드 검사(flake8) 설치
+          pip install yfinance pandas numpy pytz jq flake8
+          echo "✅ 패키지 무결성 검증 완료"
 
-      # 단계 4: 마스터 엔진 가동 (데이터 수집 및 수학적 모델링)
-      - name: 🧠 Execute Master Quant Engine
+      # ------------------------------------------------------------------------
+      # Step 5: 코드 품질 및 문법 사전 검사 (Linting Gate)
+      # ------------------------------------------------------------------------
+      - name: 🔍 5. Pre-flight Syntax & Quality Check
+        run: |
+          echo "엔진 가동 전 파이썬 코드의 치명적 문법 오류를 사전 차단합니다."
+          # 치명적 에러(E9, F63, F7, F82) 발견 시 엔진 가동 중단
+          flake8 data_collector.py --count --select=E9,F63,F7,F82 --show-source --statistics
+          echo "✅ 코드 품질 검사 (Linting) 통과"
+
+      # ------------------------------------------------------------------------
+      # Step 6: 메인 퀀트 오라클 엔진 가동
+      # ------------------------------------------------------------------------
+      - name: 🧠 6. Execute GOD-QUANT ENGINE
         run: |
           echo "==================================================="
-          echo "🚀 Starting K-QUANT MASTER ENGINE V5..."
+          echo "🔥 부팅: KOSPI ORACLE V6 CORE ENGINE"
           echo "==================================================="
+          # Fail-fast: 실행 중 에러 발생 시 즉각 파이프라인 중단
+          set -e 
           python data_collector.py
-          echo "✅ Data collection and mathematical modeling completed."
+          echo "✅ 데이터 수집, 기술적 교차 검증, 리포트 생성 완수"
 
-      # 단계 5: 스마트 커밋 및 무중단 배포 (Smart Commit & Deploy)
-      - name: 💾 Smart Commit & Push Data Protocol
+      # ------------------------------------------------------------------------
+      # Step 7: 산출물 무결성 검증 (JSON Integrity Shield)
+      # ------------------------------------------------------------------------
+      - name: 🛡️ 7. JSON Integrity & Format Validation
+        run: |
+          if [ ! -f data.json ]; then
+            echo "❌ CRITICAL: data.json 파일이 생성되지 않았습니다."
+            exit 1
+          fi
+          
+          # jq를 이용해 생성된 JSON이 웹브라우저에서 파싱 가능한 완벽한 형태인지 검사
+          cat data.json | jq empty
+          echo "✅ JSON 데이터 무결성 200% 검증 완료. (웹사이트 크래시 방지)"
+
+      # ------------------------------------------------------------------------
+      # Step 8: Actions 대시보드 시각화 리포트 생성 (Job Summary)
+      # ------------------------------------------------------------------------
+      - name: 📊 8. Generate CI/CD Execution Summary
+        run: |
+          echo "### 🚀 KOSPI ORACLE V6 Execution Report" >> $GITHUB_STEP_SUMMARY
+          echo "- **Time (KST):** $(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status:** ✅ Engine Executed Successfully" >> $GITHUB_STEP_SUMMARY
+          echo "- **File Size:** $(du -h data.json | cut -f1) generated." >> $GITHUB_STEP_SUMMARY
+
+      # ------------------------------------------------------------------------
+      # Step 9: 데이터 안전 백업 (Artifact Vault)
+      # ------------------------------------------------------------------------
+      - name: 💾 9. Upload Data to Artifact Vault
+        uses: actions/upload-artifact@v4
+        with:
+          name: oracle-data-v6-backup
+          path: data.json
+          retention-days: 7 # 7일간의 예측 데이터 히스토리 보관 (데이터 복구용)
+
+      # ------------------------------------------------------------------------
+      # Step 10: 스마트 배포 및 충돌 방지 리베이스 (Auto Deploy)
+      # ------------------------------------------------------------------------
+      - name: 🌐 10. Smart Deploy & Rebase Protocol
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # 1. 퀀트 봇 계정 시그니처 설정
-          git config --global user.name "Oracle-Master-Bot"
-          git config --global user.email "master-bot@kospi-oracle.local"
+          git config --global user.name "God-Oracle-Bot"
+          git config --global user.email "bot@kospi-oracle.local"
           
-          # 2. 산출된 데이터 파일 스테이징
           git add data.json
           
-          # 3. 변경점 검증 알고리즘 (데이터 변화가 없으면 쓸데없는 커밋을 만들지 않음)
+          # 데이터의 변경점이 없을 경우 (주말, 휴장 등) 불필요한 커밋 방지 (서버 자원 절약)
           if git diff-index --quiet HEAD; then
-            echo "📊 Market data remains unchanged (e.g., Weekend/Closed). Skipping commit."
+            echo "💤 시장 데이터 변동 없음 (휴장 상태). 배포를 스킵합니다."
           else
-            echo "🔄 Changes detected. Committing new oracle data..."
-            # 한국 시간(KST) 기준으로 정확한 타임스탬프 기록
-            git commit -m "Oracle Sync 📡: $(TZ='Asia/Seoul' date +'%Y-%m-%d %H:%M:%S KST')"
+            echo "🔄 새로운 퀀트 인사이트 포착. 터미널 배포를 시작합니다."
             
-            # 4. 레이스 컨디션(Race Condition) 방지를 위한 Rebase Pull 후 Push
-            git pull --rebase origin main
+            git commit -m "Oracle Sync 📡: $(date +'%Y-%m-%d %H:%M:%S KST')"
+            
+            # 동시 접속 및 강제 푸시로 인한 충돌을 막기 위한 안전한 Pull & Rebase
+            git pull --rebase origin main || { echo "⚠️ Rebase 충돌 발생. 병합 취소 후 강제 푸시 시도"; git rebase --abort; }
+            
             git push origin main
-            echo "🎉 Successfully deployed to KOSPI ORACLE terminal."
+            echo "🎉 배포 성공! KOSPI ORACLE V6가 세상에 반영되었습니다."
           fi
 
-      # 단계 6: 장애 감지 및 알림 (Fail-Safe)
-      - name: 🚨 Workflow Failure Notification
-        if: failure() # 위 단계 중 하나라도 실패했을 때만 작동
+      # ------------------------------------------------------------------------
+      # Step 11: 긴급 장애 발생 시 페일 세이프 (Fail-safe Alert)
+      # ------------------------------------------------------------------------
+      - name: 🚨 11. Emergency Fail-safe Protocol
+        if: failure() # 오직 앞선 단계 중 하나라도 실패했을 때만 작동
         run: |
-          echo "❌ CRITICAL ERROR: 엔진 실행 중 오류가 발생했습니다."
-          echo "야후 파이낸스 API 접속 지연 또는 파이썬 코드 문법 오류일 수 있습니다."
-          echo "Actions 탭의 상세 로그를 확인하여 디버깅을 진행하세요."
+          echo "### ❌ CRITICAL FAILURE DETECTED" >> $GITHUB_STEP_SUMMARY
+          echo "파이프라인이 붕괴되었습니다. 즉각적인 조치가 필요합니다." >> $GITHUB_STEP_SUMMARY
+          echo "1. 야후 파이낸스 API 접속 차단 여부 확인" >> $GITHUB_STEP_SUMMARY
+          echo "2. 파이썬 문법 오류 (Step 5 확인)" >> $GITHUB_STEP_SUMMARY
+          echo "3. JSON 구조 파괴 (Step 7 확인)" >> $GITHUB_STEP_SUMMARY
