@@ -88,5 +88,14 @@
     "headline": null,
     "confidence": null,
     "actual_kospi_close_pct": null
+  },
+  {
+    "date": "2026-05-23",
+    "first_logged": "04:15",
+    "score": 83,
+    "temp": 75,
+    "headline": null,
+    "confidence": null,
+    "actual_kospi_close_pct": null
   }
 ]
