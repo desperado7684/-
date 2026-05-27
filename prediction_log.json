@@ -115,5 +115,14 @@
     "headline": null,
     "confidence": null,
     "actual_kospi_close_pct": null
+  },
+  {
+    "date": "2026-05-28",
+    "first_logged": "05:37",
+    "score": 62,
+    "temp": 36,
+    "headline": null,
+    "confidence": null,
+    "actual_kospi_close_pct": null
   }
 ]
