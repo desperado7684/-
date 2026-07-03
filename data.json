@@ -1,7 +1,7 @@
 {
   "version": "V8.STOCK_PREDICT",
-  "kst": "2026-07-04 05:45:03",
-  "ts": 1783111503,
+  "kst": "2026-07-04 06:47:15",
+  "ts": 1783115235,
   "market_temp": 64,
   "prediction": {
     "score": 56,
@@ -491,7 +491,7 @@
       "^TOPX"
     ],
     "predicted_stocks": 25,
-    "history_count": 5
+    "history_count": 6
   },
   "data": [
     {
