@@ -536,5 +536,14 @@
     "actual_direction": "NEUTRAL",
     "is_correct": false,
     "verified_at": "2026-07-21T00:03:56.984413+09:00"
+  },
+  {
+    "date": "2026-07-21",
+    "first_logged": "01:39",
+    "score": 88,
+    "temp": 14,
+    "headline": null,
+    "confidence": null,
+    "actual_kospi_close_pct": null
   }
 ]
