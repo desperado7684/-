@@ -531,6 +531,10 @@
     "temp": 14,
     "headline": null,
     "confidence": null,
-    "actual_kospi_close_pct": null
+    "actual_kospi_close_pct": NaN,
+    "predicted_direction": "DOWN",
+    "actual_direction": "NEUTRAL",
+    "is_correct": false,
+    "verified_at": "2026-07-21T00:03:56.984413+09:00"
   }
 ]
