@@ -554,5 +554,14 @@
     "headline": null,
     "confidence": null,
     "actual_kospi_close_pct": null
+  },
+  {
+    "date": "2026-07-23",
+    "first_logged": "01:20",
+    "score": 92,
+    "temp": 20,
+    "headline": null,
+    "confidence": null,
+    "actual_kospi_close_pct": null
   }
 ]
