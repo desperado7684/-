@@ -1,17 +1,17 @@
 {
   "version": "V8.STOCK_PREDICT",
-  "kst": "2026-08-21 13:20:43",
-  "ts": 1787286043,
-  "market_temp": 25,
+  "kst": "2026-08-21 14:03:29",
+  "ts": 1787288609,
+  "market_temp": 32,
   "prediction": {
     "score": 34,
-    "report": "💡 [알고리즘 분석 결과]\n내일 코스피는 하방 압력에 강하게 노출될 전망입니다. 'VIX 공포지수'의 불안정한 움직임이 외국인 투심을 위축시킬 우려가 큽니다.\n\n🌡️ [시장 온도: 25°C의 의미]\n현재 온도가 25도로 매우 차가운 이유는 전 세계 핵심 자산의 70% 이상이 일제히 파란불(하락)을 켜고 있는 '글로벌 리스크 오프' 상태이기 때문입니다.",
+    "report": "💡 [알고리즘 분석 결과]\n내일 코스피는 하방 압력에 강하게 노출될 전망입니다. 'VIX 공포지수'의 불안정한 움직임이 외국인 투심을 위축시킬 우려가 큽니다.\n\n🌡️ [시장 온도: 32°C의 의미]\n현재 온도가 32도로 미지근한 이유는 위험자산의 절반 이상이 약세를 보이며 매수 의지가 약화된 관망 우세 국면이기 때문입니다.",
     "headline": null,
     "key_drivers": [],
     "key_risks": [],
     "confidence": "MEDIUM",
     "ai_enhanced": false,
-    "rule_report": "💡 [알고리즘 분석 결과]\n내일 코스피는 하방 압력에 강하게 노출될 전망입니다. 'VIX 공포지수'의 불안정한 움직임이 외국인 투심을 위축시킬 우려가 큽니다.\n\n🌡️ [시장 온도: 25°C의 의미]\n현재 온도가 25도로 매우 차가운 이유는 전 세계 핵심 자산의 70% 이상이 일제히 파란불(하락)을 켜고 있는 '글로벌 리스크 오프' 상태이기 때문입니다.",
+    "rule_report": "💡 [알고리즘 분석 결과]\n내일 코스피는 하방 압력에 강하게 노출될 전망입니다. 'VIX 공포지수'의 불안정한 움직임이 외국인 투심을 위축시킬 우려가 큽니다.\n\n🌡️ [시장 온도: 32°C의 의미]\n현재 온도가 32도로 미지근한 이유는 위험자산의 절반 이상이 약세를 보이며 매수 의지가 약화된 관망 우세 국면이기 때문입니다.",
     "disclaimer": "본 분석은 통계 기반 [가상의 모델링 자료]이며 투자 결과에 법적 책임을 지지 않습니다."
   },
   "stock_predictions": {
@@ -19,10 +19,10 @@
       {
         "symbol": "012450.KS",
         "name": "한화에어로스페이스",
-        "current_price": 1085000.0,
-        "today_change": -7.03,
-        "expected_change_pct": 0.89,
-        "expected_price": 1094612.99,
+        "current_price": 1087000.0,
+        "today_change": -6.86,
+        "expected_change_pct": 0.88,
+        "expected_price": 1096598.1,
         "confidence": "LOW",
         "beta": 0.264,
         "sector": "defense_nuclear"
@@ -30,10 +30,10 @@
       {
         "symbol": "034020.KS",
         "name": "두산에너빌리티",
-        "current_price": 73500.0,
-        "today_change": -3.16,
-        "expected_change_pct": 0.66,
-        "expected_price": 73983.27,
+        "current_price": 73700.0,
+        "today_change": -2.9,
+        "expected_change_pct": 0.65,
+        "expected_price": 74182.37,
         "confidence": "MEDIUM",
         "beta": 0.621,
         "sector": "defense_nuclear"
@@ -41,10 +41,10 @@
       {
         "symbol": "055550.KS",
         "name": "신한지주",
-        "current_price": 103700.0,
-        "today_change": 2.57,
+        "current_price": 104100.0,
+        "today_change": 2.97,
         "expected_change_pct": -0.01,
-        "expected_price": 103689.8,
+        "expected_price": 104089.76,
         "confidence": "LOW",
         "beta": 0.111,
         "sector": "finance"
@@ -52,10 +52,10 @@
       {
         "symbol": "105560.KS",
         "name": "KB금융",
-        "current_price": 163000.0,
-        "today_change": 1.88,
+        "current_price": 163200.0,
+        "today_change": 2.0,
         "expected_change_pct": -0.06,
-        "expected_price": 162903.63,
+        "expected_price": 163103.52,
         "confidence": "LOW",
         "beta": 0.188,
         "sector": "finance"
@@ -63,12 +63,12 @@
       {
         "symbol": "086790.KS",
         "name": "하나금융지주",
-        "current_price": 128600.0,
-        "today_change": 4.21,
+        "current_price": 129400.0,
+        "today_change": 4.86,
         "expected_change_pct": -0.08,
-        "expected_price": 128501.75,
+        "expected_price": 129300.31,
         "confidence": "LOW",
-        "beta": 0.215,
+        "beta": 0.216,
         "sector": "finance"
       }
     ],
@@ -76,10 +76,10 @@
       {
         "symbol": "196170.KQ",
         "name": "알테오젠",
-        "current_price": 315000.0,
-        "today_change": -7.22,
+        "current_price": 319500.0,
+        "today_change": -5.89,
         "expected_change_pct": -1.22,
-        "expected_price": 311157.25,
+        "expected_price": 315602.36,
         "confidence": "HIGH",
         "beta": 0.528,
         "sector": "bio"
@@ -87,10 +87,10 @@
       {
         "symbol": "028300.KQ",
         "name": "HLB",
-        "current_price": 39050.0,
-        "today_change": -2.13,
+        "current_price": 39000.0,
+        "today_change": -2.26,
         "expected_change_pct": -1.15,
-        "expected_price": 38599.13,
+        "expected_price": 38549.71,
         "confidence": "MEDIUM",
         "beta": 0.484,
         "sector": "bio"
@@ -98,10 +98,10 @@
       {
         "symbol": "068270.KS",
         "name": "셀트리온",
-        "current_price": 189900.0,
-        "today_change": -2.16,
+        "current_price": 191900.0,
+        "today_change": -1.13,
         "expected_change_pct": -1.0,
-        "expected_price": 188007.53,
+        "expected_price": 189987.6,
         "confidence": "MEDIUM",
         "beta": 0.179,
         "sector": "bio"
@@ -109,10 +109,10 @@
       {
         "symbol": "207940.KS",
         "name": "삼성바이오로직스",
-        "current_price": 1544000.0,
-        "today_change": -1.91,
+        "current_price": 1554000.0,
+        "today_change": -1.27,
         "expected_change_pct": -0.96,
-        "expected_price": 1529156.6,
+        "expected_price": 1539060.47,
         "confidence": "MEDIUM",
         "beta": 0.124,
         "sector": "bio"
@@ -120,10 +120,10 @@
       {
         "symbol": "028260.KS",
         "name": "삼성물산",
-        "current_price": 387500.0,
-        "today_change": 3.61,
+        "current_price": 389500.0,
+        "today_change": 4.14,
         "expected_change_pct": -0.9,
-        "expected_price": 384025.98,
+        "expected_price": 386008.05,
         "confidence": "MEDIUM",
         "beta": 0.993,
         "sector": "general"
@@ -133,10 +133,10 @@
       {
         "symbol": "012450.KS",
         "name": "한화에어로스페이스",
-        "current_price": 1085000.0,
-        "today_change": -7.03,
-        "expected_change_pct": 0.89,
-        "expected_price": 1094612.99,
+        "current_price": 1087000.0,
+        "today_change": -6.86,
+        "expected_change_pct": 0.88,
+        "expected_price": 1096598.1,
         "confidence": "LOW",
         "beta": 0.264,
         "sector": "defense_nuclear"
@@ -144,10 +144,10 @@
       {
         "symbol": "034020.KS",
         "name": "두산에너빌리티",
-        "current_price": 73500.0,
-        "today_change": -3.16,
-        "expected_change_pct": 0.66,
-        "expected_price": 73983.27,
+        "current_price": 73700.0,
+        "today_change": -2.9,
+        "expected_change_pct": 0.65,
+        "expected_price": 74182.37,
         "confidence": "MEDIUM",
         "beta": 0.621,
         "sector": "defense_nuclear"
@@ -155,10 +155,10 @@
       {
         "symbol": "055550.KS",
         "name": "신한지주",
-        "current_price": 103700.0,
-        "today_change": 2.57,
+        "current_price": 104100.0,
+        "today_change": 2.97,
         "expected_change_pct": -0.01,
-        "expected_price": 103689.8,
+        "expected_price": 104089.76,
         "confidence": "LOW",
         "beta": 0.111,
         "sector": "finance"
@@ -166,10 +166,10 @@
       {
         "symbol": "105560.KS",
         "name": "KB금융",
-        "current_price": 163000.0,
-        "today_change": 1.88,
+        "current_price": 163200.0,
+        "today_change": 2.0,
         "expected_change_pct": -0.06,
-        "expected_price": 162903.63,
+        "expected_price": 163103.52,
         "confidence": "LOW",
         "beta": 0.188,
         "sector": "finance"
@@ -177,21 +177,21 @@
       {
         "symbol": "086790.KS",
         "name": "하나금융지주",
-        "current_price": 128600.0,
-        "today_change": 4.21,
+        "current_price": 129400.0,
+        "today_change": 4.86,
         "expected_change_pct": -0.08,
-        "expected_price": 128501.75,
+        "expected_price": 129300.31,
         "confidence": "LOW",
-        "beta": 0.215,
+        "beta": 0.216,
         "sector": "finance"
       },
       {
         "symbol": "000270.KS",
         "name": "기아",
-        "current_price": 131300.0,
-        "today_change": 0.15,
-        "expected_change_pct": -0.22,
-        "expected_price": 131009.3,
+        "current_price": 131500.0,
+        "today_change": 0.31,
+        "expected_change_pct": -0.2,
+        "expected_price": 131230.56,
         "confidence": "LOW",
         "beta": 0.495,
         "sector": "auto"
@@ -199,10 +199,10 @@
       {
         "symbol": "009540.KS",
         "name": "HD한국조선해양",
-        "current_price": 350500.0,
-        "today_change": -2.77,
+        "current_price": 349500.0,
+        "today_change": -3.05,
         "expected_change_pct": -0.28,
-        "expected_price": 349525.75,
+        "expected_price": 348537.44,
         "confidence": "LOW",
         "beta": 0.289,
         "sector": "shipbuilding"
@@ -210,10 +210,10 @@
       {
         "symbol": "058470.KQ",
         "name": "리노공업",
-        "current_price": 65100.0,
-        "today_change": -6.33,
+        "current_price": 65200.0,
+        "today_change": -6.19,
         "expected_change_pct": -0.28,
-        "expected_price": 64917.7,
+        "expected_price": 65019.47,
         "confidence": "HIGH",
         "beta": 0.637,
         "sector": "semiconductor"
@@ -221,10 +221,10 @@
       {
         "symbol": "005380.KS",
         "name": "현대차",
-        "current_price": 417000.0,
-        "today_change": -0.12,
-        "expected_change_pct": -0.32,
-        "expected_price": 415673.77,
+        "current_price": 418500.0,
+        "today_change": 0.24,
+        "expected_change_pct": -0.3,
+        "expected_price": 417238.06,
         "confidence": "MEDIUM",
         "beta": 0.646,
         "sector": "auto"
@@ -232,10 +232,10 @@
       {
         "symbol": "329180.KS",
         "name": "HD현대중공업",
-        "current_price": 459500.0,
-        "today_change": -3.36,
+        "current_price": 457000.0,
+        "today_change": -3.89,
         "expected_change_pct": -0.33,
-        "expected_price": 457975.75,
+        "expected_price": 455495.69,
         "confidence": "LOW",
         "beta": 0.373,
         "sector": "shipbuilding"
@@ -243,10 +243,10 @@
       {
         "symbol": "373220.KS",
         "name": "LG에너지솔루션",
-        "current_price": 347500.0,
-        "today_change": -2.93,
-        "expected_change_pct": -0.37,
-        "expected_price": 346207.44,
+        "current_price": 348000.0,
+        "today_change": -2.79,
+        "expected_change_pct": -0.36,
+        "expected_price": 346736.9,
         "confidence": "LOW",
         "beta": 0.374,
         "sector": "battery"
@@ -254,21 +254,21 @@
       {
         "symbol": "035720.KS",
         "name": "카카오",
-        "current_price": 33800.0,
-        "today_change": -12.66,
-        "expected_change_pct": -0.43,
-        "expected_price": 33653.82,
+        "current_price": 35300.0,
+        "today_change": -8.79,
+        "expected_change_pct": -0.41,
+        "expected_price": 35156.79,
         "confidence": "LOW",
-        "beta": 0.286,
+        "beta": 0.287,
         "sector": "platform"
       },
       {
         "symbol": "035420.KS",
         "name": "NAVER",
-        "current_price": 219000.0,
-        "today_change": -0.23,
+        "current_price": 220000.0,
+        "today_change": 0.23,
         "expected_change_pct": -0.49,
-        "expected_price": 217925.15,
+        "expected_price": 218920.24,
         "confidence": "LOW",
         "beta": 0.42,
         "sector": "platform"
@@ -276,10 +276,10 @@
       {
         "symbol": "005930.KS",
         "name": "삼성전자",
-        "current_price": 278500.0,
-        "today_change": 2.77,
+        "current_price": 278250.0,
+        "today_change": 2.68,
         "expected_change_pct": -0.54,
-        "expected_price": 276982.2,
+        "expected_price": 276742.33,
         "confidence": "HIGH",
         "beta": 1.051,
         "sector": "semiconductor"
@@ -289,8 +289,8 @@
         "name": "삼성SDI",
         "current_price": 485000.0,
         "today_change": -2.9,
-        "expected_change_pct": -0.55,
-        "expected_price": 482317.56,
+        "expected_change_pct": -0.54,
+        "expected_price": 482361.21,
         "confidence": "MEDIUM",
         "beta": 0.657,
         "sector": "battery"
@@ -298,10 +298,10 @@
       {
         "symbol": "247540.KQ",
         "name": "에코프로비엠",
-        "current_price": 105900.0,
-        "today_change": -7.19,
-        "expected_change_pct": -0.56,
-        "expected_price": 105312.25,
+        "current_price": 106000.0,
+        "today_change": -7.1,
+        "expected_change_pct": -0.55,
+        "expected_price": 105421.24,
         "confidence": "MEDIUM",
         "beta": 0.66,
         "sector": "battery"
@@ -309,10 +309,10 @@
       {
         "symbol": "086520.KQ",
         "name": "에코프로",
-        "current_price": 82700.0,
-        "today_change": -6.13,
-        "expected_change_pct": -0.57,
-        "expected_price": 82227.78,
+        "current_price": 82800.0,
+        "today_change": -6.02,
+        "expected_change_pct": -0.56,
+        "expected_price": 82334.66,
         "confidence": "MEDIUM",
         "beta": 0.685,
         "sector": "battery"
@@ -320,10 +320,10 @@
       {
         "symbol": "009150.KS",
         "name": "삼성전기",
-        "current_price": 1318000.0,
-        "today_change": -5.59,
+        "current_price": 1319000.0,
+        "today_change": -5.52,
         "expected_change_pct": -0.62,
-        "expected_price": 1309830.11,
+        "expected_price": 1310865.46,
         "confidence": "HIGH",
         "beta": 1.168,
         "sector": "semiconductor"
@@ -331,10 +331,10 @@
       {
         "symbol": "000660.KS",
         "name": "SK하이닉스",
-        "current_price": 1743500.0,
-        "today_change": 3.1,
+        "current_price": 1732000.0,
+        "today_change": 2.42,
         "expected_change_pct": -0.7,
-        "expected_price": 1731275.45,
+        "expected_price": 1719910.64,
         "confidence": "HIGH",
         "beta": 1.295,
         "sector": "semiconductor"
@@ -342,10 +342,10 @@
       {
         "symbol": "402340.KS",
         "name": "SK스퀘어",
-        "current_price": 1118000.0,
-        "today_change": -0.45,
+        "current_price": 1115000.0,
+        "today_change": -0.71,
         "expected_change_pct": -0.73,
-        "expected_price": 1109846.31,
+        "expected_price": 1106903.32,
         "confidence": "HIGH",
         "beta": 1.339,
         "sector": "semiconductor"
@@ -353,10 +353,10 @@
       {
         "symbol": "028260.KS",
         "name": "삼성물산",
-        "current_price": 387500.0,
-        "today_change": 3.61,
+        "current_price": 389500.0,
+        "today_change": 4.14,
         "expected_change_pct": -0.9,
-        "expected_price": 384025.98,
+        "expected_price": 386008.05,
         "confidence": "MEDIUM",
         "beta": 0.993,
         "sector": "general"
@@ -364,10 +364,10 @@
       {
         "symbol": "207940.KS",
         "name": "삼성바이오로직스",
-        "current_price": 1544000.0,
-        "today_change": -1.91,
+        "current_price": 1554000.0,
+        "today_change": -1.27,
         "expected_change_pct": -0.96,
-        "expected_price": 1529156.6,
+        "expected_price": 1539060.47,
         "confidence": "MEDIUM",
         "beta": 0.124,
         "sector": "bio"
@@ -375,10 +375,10 @@
       {
         "symbol": "068270.KS",
         "name": "셀트리온",
-        "current_price": 189900.0,
-        "today_change": -2.16,
+        "current_price": 191900.0,
+        "today_change": -1.13,
         "expected_change_pct": -1.0,
-        "expected_price": 188007.53,
+        "expected_price": 189987.6,
         "confidence": "MEDIUM",
         "beta": 0.179,
         "sector": "bio"
@@ -386,10 +386,10 @@
       {
         "symbol": "028300.KQ",
         "name": "HLB",
-        "current_price": 39050.0,
-        "today_change": -2.13,
+        "current_price": 39000.0,
+        "today_change": -2.26,
         "expected_change_pct": -1.15,
-        "expected_price": 38599.13,
+        "expected_price": 38549.71,
         "confidence": "MEDIUM",
         "beta": 0.484,
         "sector": "bio"
@@ -397,10 +397,10 @@
       {
         "symbol": "196170.KQ",
         "name": "알테오젠",
-        "current_price": 315000.0,
-        "today_change": -7.22,
+        "current_price": 319500.0,
+        "today_change": -5.89,
         "expected_change_pct": -1.22,
-        "expected_price": 311157.25,
+        "expected_price": 315602.36,
         "confidence": "HIGH",
         "beta": 0.528,
         "sector": "bio"
@@ -408,14 +408,14 @@
     ]
   },
   "oracle_meta": {
-    "bull_energy": 0.368,
-    "bear_energy": 0.722,
+    "bull_energy": 0.383,
+    "bear_energy": 0.729,
     "best_factor": {
-      "name": "필라델피아 반도체 ETF",
-      "change": 0.52,
-      "weight": 0.22,
+      "name": "금 선물",
+      "change": 1.8,
+      "weight": 0.05,
       "is_inverse": false,
-      "impact": 0.1144
+      "impact": 0.117
     },
     "worst_factor": {
       "name": "VIX 공포지수",
@@ -433,6 +433,13 @@
         "impact": -0.507
       },
       {
+        "name": "금 선물",
+        "change": 1.8,
+        "weight": 0.05,
+        "is_inverse": false,
+        "impact": 0.117
+      },
+      {
         "name": "필라델피아 반도체 ETF",
         "change": 0.52,
         "weight": 0.22,
@@ -440,25 +447,18 @@
         "impact": 0.1144
       },
       {
-        "name": "금 선물",
-        "change": 1.75,
-        "weight": 0.05,
-        "is_inverse": false,
-        "impact": 0.1138
-      },
-      {
         "name": "WTI 유가",
-        "change": -1.57,
+        "change": -1.67,
         "weight": 0.05,
         "is_inverse": false,
-        "impact": -0.1021
+        "impact": -0.1086
       },
       {
         "name": "원/달러 환율",
-        "change": -0.53,
+        "change": -0.6,
         "weight": 0.18,
         "is_inverse": true,
-        "impact": 0.0954
+        "impact": 0.108
       },
       {
         "name": "미 국채 10년물",
@@ -491,7 +491,7 @@
       "^TOPX"
     ],
     "predicted_stocks": 25,
-    "history_count": 20
+    "history_count": 21
   },
   "data": [
     {
@@ -505,9 +505,9 @@
         "rsi": 44.0,
         "macd": 0.002,
         "bb": 45.7,
-        "stoch_k": 86.9,
+        "stoch_k": 43.1,
         "ma_trend": "강한 역배열",
-        "atr_pct": 12.72
+        "atr_pct": 6.64
       },
       "sparkline": [
         16.13,
@@ -550,13 +550,13 @@
       "name": "KOSDAQ 종합지수",
       "cat": "Korea",
       "sector": "index",
-      "price": 801.64,
-      "change": -4.67,
+      "price": 802.29,
+      "change": -4.59,
       "tech": {
-        "rsi": 74.4,
-        "macd": 8.489,
-        "bb": 53.8,
-        "stoch_k": 55.4,
+        "rsi": 74.5,
+        "macd": 8.53,
+        "bb": 54.1,
+        "stoch_k": 55.8,
         "ma_trend": "강한 역배열",
         "atr_pct": 5.06
       },
@@ -590,26 +590,26 @@
         834.2,
         824.46,
         840.89,
-        801.64
+        802.29
       ],
       "ok": true,
       "prediction": null,
-      "comment": "전일 대비 -4.67% 변동. 변동성(ATR) 5.1%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "전일 대비 -4.59% 변동. 변동성(ATR) 5.1%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "GC=F",
       "name": "금 선물",
       "cat": "Macro_Predict",
       "sector": "general",
-      "price": 4595.2,
-      "change": 1.75,
+      "price": 4597.6,
+      "change": 1.8,
       "tech": {
         "rsi": 86.8,
-        "macd": 32.622,
-        "bb": 93.9,
-        "stoch_k": 99.3,
+        "macd": 32.775,
+        "bb": 94.2,
+        "stoch_k": 98.8,
         "ma_trend": "정배열 상승",
-        "atr_pct": 1.91
+        "atr_pct": 1.92
       },
       "sparkline": [
         3997.0,
@@ -641,11 +641,11 @@
         4366.0,
         4489.3999,
         4516.2998,
-        4595.2002
+        4597.6001
       ],
       "ok": true,
       "prediction": null,
-      "comment": "전일 대비 +1.75% 변동. 이동평균선 정배열과 MACD 상승 결합 → 강력한 주도주 흐름. 🚀"
+      "comment": "전일 대비 +1.80% 변동. 이동평균선 정배열과 MACD 상승 결합 → 강력한 주도주 흐름. 🚀"
     },
     {
       "symbol": "AAPL",
@@ -754,13 +754,13 @@
       "name": "WTI 유가",
       "cat": "Macro_Predict",
       "sector": "general",
-      "price": 86.45,
-      "change": -1.57,
+      "price": 86.36,
+      "change": -1.67,
       "tech": {
-        "rsi": 63.2,
-        "macd": 0.632,
-        "bb": 80.5,
-        "stoch_k": 82.7,
+        "rsi": 63.0,
+        "macd": 0.627,
+        "bb": 80.0,
+        "stoch_k": 82.1,
         "ma_trend": "정배열 상승",
         "atr_pct": 3.66
       },
@@ -794,11 +794,11 @@
         84.94,
         85.83,
         87.83,
-        86.45
+        86.36
       ],
       "ok": true,
       "prediction": null,
-      "comment": "전일 대비 -1.57% 변동. 이동평균선 정배열과 MACD 상승 결합 → 강력한 주도주 흐름. 🚀"
+      "comment": "전일 대비 -1.67% 변동. 이동평균선 정배열과 MACD 상승 결합 → 강력한 주도주 흐름. 🚀"
     },
     {
       "symbol": "^RUT",
@@ -907,15 +907,15 @@
       "name": "알테오젠",
       "cat": "Korea",
       "sector": "bio",
-      "price": 315000.0,
-      "change": -7.22,
+      "price": 319500.0,
+      "change": -5.89,
       "tech": {
-        "rsi": 67.1,
-        "macd": 3485.925,
-        "bb": 69.2,
-        "stoch_k": 67.0,
+        "rsi": 68.5,
+        "macd": 3773.104,
+        "bb": 71.6,
+        "stoch_k": 70.6,
         "ma_trend": "강한 정배열",
-        "atr_pct": 8.2
+        "atr_pct": 8.09
       },
       "sparkline": [
         230769.2344,
@@ -947,13 +947,13 @@
         298000.0,
         303500.0,
         339500.0,
-        315000.0
+        319500.0
       ],
       "ok": true,
       "beta": 0.528,
       "prediction": {
         "expected_change_pct": -1.22,
-        "expected_price": 311157.25,
+        "expected_price": 315602.36,
         "confidence": "HIGH",
         "method": "beta+sector+tech",
         "components": {
@@ -964,22 +964,22 @@
         "beta_used": 0.528,
         "warning": null
       },
-      "comment": "📌 [내일 예측] 🔻 예상 변동 -1.22% (목표가 311,157, 신뢰도 높음)\n\n전일 대비 -7.22% 변동. 이동평균선 정배열과 MACD 상승 결합 → 강력한 주도주 흐름. 🚀"
+      "comment": "📌 [내일 예측] 🔻 예상 변동 -1.22% (목표가 315,602, 신뢰도 높음)\n\n전일 대비 -5.89% 변동. 이동평균선 정배열과 MACD 상승 결합 → 강력한 주도주 흐름. 🚀"
     },
     {
       "symbol": "028300.KQ",
       "name": "HLB",
       "cat": "Korea",
       "sector": "bio",
-      "price": 39050.0,
-      "change": -2.13,
+      "price": 39000.0,
+      "change": -2.26,
       "tech": {
-        "rsi": 74.4,
-        "macd": 857.837,
-        "bb": 62.1,
-        "stoch_k": 60.8,
+        "rsi": 74.1,
+        "macd": 854.646,
+        "bb": 61.9,
+        "stoch_k": 60.5,
         "ma_trend": "강한 역배열",
-        "atr_pct": 7.72
+        "atr_pct": 7.73
       },
       "sparkline": [
         52200.0,
@@ -1011,13 +1011,13 @@
         43150.0,
         42100.0,
         39900.0,
-        39050.0
+        39000.0
       ],
       "ok": true,
       "beta": 0.484,
       "prediction": {
         "expected_change_pct": -1.15,
-        "expected_price": 38599.13,
+        "expected_price": 38549.71,
         "confidence": "MEDIUM",
         "method": "beta+sector+tech",
         "components": {
@@ -1028,22 +1028,22 @@
         "beta_used": 0.484,
         "warning": null
       },
-      "comment": "📌 [내일 예측] 🔻 예상 변동 -1.15% (목표가 38,599, 신뢰도 보통)\n\n전일 대비 -2.13% 변동. 변동성(ATR) 7.7%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] 🔻 예상 변동 -1.15% (목표가 38,550, 신뢰도 보통)\n\n전일 대비 -2.26% 변동. 변동성(ATR) 7.7%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "068270.KS",
       "name": "셀트리온",
       "cat": "Korea",
       "sector": "bio",
-      "price": 189900.0,
-      "change": -2.16,
+      "price": 191900.0,
+      "change": -1.13,
       "tech": {
-        "rsi": 53.0,
-        "macd": -892.38,
-        "bb": 45.4,
-        "stoch_k": 30.3,
+        "rsi": 55.1,
+        "macd": -764.744,
+        "bb": 50.4,
+        "stoch_k": 36.6,
         "ma_trend": "강한 정배열",
-        "atr_pct": 3.75
+        "atr_pct": 3.71
       },
       "sparkline": [
         173100.0,
@@ -1075,13 +1075,13 @@
         195500.0,
         194100.0,
         194100.0,
-        189900.0
+        191900.0
       ],
       "ok": true,
       "beta": 0.179,
       "prediction": {
         "expected_change_pct": -1.0,
-        "expected_price": 188007.53,
+        "expected_price": 189987.6,
         "confidence": "MEDIUM",
         "method": "beta+sector+tech",
         "components": {
@@ -1092,7 +1092,7 @@
         "beta_used": 0.179,
         "warning": null
       },
-      "comment": "📌 [내일 예측] 🔻 예상 변동 -1.00% (목표가 188,008, 신뢰도 보통)\n\n전일 대비 -2.16% 변동. 변동성(ATR) 3.8%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] 🔻 예상 변동 -1.00% (목표가 189,988, 신뢰도 보통)\n\n전일 대비 -1.13% 변동. 변동성(ATR) 3.7%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "^IXIC",
@@ -1150,15 +1150,15 @@
       "name": "삼성바이오로직스",
       "cat": "Korea",
       "sector": "bio",
-      "price": 1544000.0,
-      "change": -1.91,
+      "price": 1554000.0,
+      "change": -1.27,
       "tech": {
-        "rsi": 56.9,
-        "macd": -1964.054,
-        "bb": 58.4,
-        "stoch_k": 57.7,
+        "rsi": 58.2,
+        "macd": -1325.877,
+        "bb": 63.9,
+        "stoch_k": 61.9,
         "ma_trend": "강한 정배열",
-        "atr_pct": 3.59
+        "atr_pct": 3.57
       },
       "sparkline": [
         1325000.0,
@@ -1190,13 +1190,13 @@
         1531000.0,
         1544000.0,
         1574000.0,
-        1544000.0
+        1554000.0
       ],
       "ok": true,
       "beta": 0.124,
       "prediction": {
         "expected_change_pct": -0.96,
-        "expected_price": 1529156.6,
+        "expected_price": 1539060.47,
         "confidence": "MEDIUM",
         "method": "beta+sector+tech",
         "components": {
@@ -1207,7 +1207,7 @@
         "beta_used": 0.124,
         "warning": null
       },
-      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.96% (목표가 1,529,157, 신뢰도 보통)\n\n전일 대비 -1.91% 변동. 변동성(ATR) 3.6%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.96% (목표가 1,539,060, 신뢰도 보통)\n\n전일 대비 -1.27% 변동. 변동성(ATR) 3.6%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "^TNX",
@@ -1265,15 +1265,15 @@
       "name": "삼성물산",
       "cat": "Korea",
       "sector": "general",
-      "price": 387500.0,
-      "change": 3.61,
+      "price": 389500.0,
+      "change": 4.14,
       "tech": {
-        "rsi": 60.8,
-        "macd": 8346.79,
-        "bb": 93.6,
-        "stoch_k": 92.4,
+        "rsi": 61.3,
+        "macd": 8474.425,
+        "bb": 95.1,
+        "stoch_k": 94.8,
         "ma_trend": "강한 역배열",
-        "atr_pct": 6.13
+        "atr_pct": 6.1
       },
       "sparkline": [
         378500.0,
@@ -1305,13 +1305,13 @@
         369000.0,
         347000.0,
         374000.0,
-        387500.0
+        389500.0
       ],
       "ok": true,
       "beta": 0.993,
       "prediction": {
         "expected_change_pct": -0.9,
-        "expected_price": 384025.98,
+        "expected_price": 386008.05,
         "confidence": "MEDIUM",
         "method": "beta+sector+tech",
         "components": {
@@ -1322,22 +1322,22 @@
         "beta_used": 0.993,
         "warning": null
       },
-      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.90% (목표가 384,026, 신뢰도 보통)\n\n전일 대비 +3.61% 변동. 변동성(ATR) 6.1%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.90% (목표가 386,008, 신뢰도 보통)\n\n전일 대비 +4.14% 변동. 변동성(ATR) 6.1%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "012450.KS",
       "name": "한화에어로스페이스",
       "cat": "Korea",
       "sector": "defense_nuclear",
-      "price": 1085000.0,
-      "change": -7.03,
+      "price": 1087000.0,
+      "change": -6.86,
       "tech": {
-        "rsi": 65.6,
-        "macd": 12954.618,
-        "bb": 59.7,
-        "stoch_k": 51.4,
+        "rsi": 65.9,
+        "macd": 13082.253,
+        "bb": 60.1,
+        "stoch_k": 52.0,
         "ma_trend": "역배열 약세",
-        "atr_pct": 6.68
+        "atr_pct": 6.67
       },
       "sparkline": [
         953000.0,
@@ -1369,24 +1369,24 @@
         1146000.0,
         1177000.0,
         1167000.0,
-        1085000.0
+        1087000.0
       ],
       "ok": true,
       "beta": 0.264,
       "prediction": {
-        "expected_change_pct": 0.89,
-        "expected_price": 1094612.99,
+        "expected_change_pct": 0.88,
+        "expected_price": 1096598.1,
         "confidence": "LOW",
         "method": "beta+sector+tech",
         "components": {
           "base_kospi_effect": -0.169,
-          "sector_adjustment": 1.055,
+          "sector_adjustment": 1.052,
           "tech_modifier": 0.0
         },
         "beta_used": 0.264,
         "warning": null
       },
-      "comment": "📌 [내일 예측] 📈 예상 변동 +0.89% (목표가 1,094,613, 신뢰도 낮음)\n\n전일 대비 -7.03% 변동. 변동성(ATR) 6.7%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] 📈 예상 변동 +0.88% (목표가 1,096,598, 신뢰도 낮음)\n\n전일 대비 -6.86% 변동. 변동성(ATR) 6.7%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "^GSPC",
@@ -1444,15 +1444,15 @@
       "name": "SK스퀘어",
       "cat": "Korea",
       "sector": "semiconductor",
-      "price": 1118000.0,
-      "change": -0.45,
+      "price": 1115000.0,
+      "change": -0.71,
       "tech": {
-        "rsi": 55.1,
-        "macd": 27725.409,
-        "bb": 73.1,
-        "stoch_k": 59.6,
+        "rsi": 54.9,
+        "macd": 27533.956,
+        "bb": 72.4,
+        "stoch_k": 58.8,
         "ma_trend": "강한 역배열",
-        "atr_pct": 8.87
+        "atr_pct": 8.9
       },
       "sparkline": [
         1327000.0,
@@ -1484,24 +1484,24 @@
         1135000.0,
         1004000.0,
         1123000.0,
-        1118000.0
+        1115000.0
       ],
       "ok": true,
       "beta": 1.339,
       "prediction": {
         "expected_change_pct": -0.73,
-        "expected_price": 1109846.31,
+        "expected_price": 1106903.32,
         "confidence": "HIGH",
         "method": "beta+sector+tech",
         "components": {
           "base_kospi_effect": -0.857,
-          "sector_adjustment": 0.128,
+          "sector_adjustment": 0.131,
           "tech_modifier": 0.0
         },
         "beta_used": 1.339,
         "warning": null
       },
-      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.73% (목표가 1,109,846, 신뢰도 높음)\n\n전일 대비 -0.45% 변동. 변동성(ATR) 8.9%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.73% (목표가 1,106,903, 신뢰도 높음)\n\n전일 대비 -0.71% 변동. 변동성(ATR) 8.9%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "^HSI",
@@ -1559,15 +1559,15 @@
       "name": "SK하이닉스",
       "cat": "Korea",
       "sector": "semiconductor",
-      "price": 1743500.0,
-      "change": 3.1,
+      "price": 1732000.0,
+      "change": 2.42,
       "tech": {
-        "rsi": 51.1,
-        "macd": 46126.543,
-        "bb": 80.9,
-        "stoch_k": 88.4,
+        "rsi": 50.6,
+        "macd": 45392.64,
+        "bb": 79.1,
+        "stoch_k": 85.7,
         "ma_trend": "강한 역배열",
-        "atr_pct": 7.9
+        "atr_pct": 7.96
       },
       "sparkline": [
         2186000.0,
@@ -1599,39 +1599,39 @@
         1662000.0,
         1500000.0,
         1691000.0,
-        1743500.0
+        1732000.0
       ],
       "ok": true,
       "beta": 1.295,
       "prediction": {
         "expected_change_pct": -0.7,
-        "expected_price": 1731275.45,
+        "expected_price": 1719910.64,
         "confidence": "HIGH",
         "method": "beta+sector+tech",
         "components": {
           "base_kospi_effect": -0.829,
-          "sector_adjustment": 0.128,
+          "sector_adjustment": 0.131,
           "tech_modifier": 0.0
         },
         "beta_used": 1.295,
         "warning": null
       },
-      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.70% (목표가 1,731,275, 신뢰도 높음)\n\n전일 대비 +3.10% 변동. 변동성(ATR) 7.9%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.70% (목표가 1,719,911, 신뢰도 높음)\n\n전일 대비 +2.42% 변동. 변동성(ATR) 8.0%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "034020.KS",
       "name": "두산에너빌리티",
       "cat": "Korea",
       "sector": "defense_nuclear",
-      "price": 73500.0,
-      "change": -3.16,
+      "price": 73700.0,
+      "change": -2.9,
       "tech": {
-        "rsi": 60.7,
-        "macd": 647.169,
-        "bb": 49.6,
-        "stoch_k": 41.1,
+        "rsi": 61.1,
+        "macd": 659.932,
+        "bb": 50.3,
+        "stoch_k": 42.0,
         "ma_trend": "강한 역배열",
-        "atr_pct": 5.58
+        "atr_pct": 5.56
       },
       "sparkline": [
         73200.0,
@@ -1663,39 +1663,39 @@
         77900.0,
         76200.0,
         75900.0,
-        73500.0
+        73700.0
       ],
       "ok": true,
       "beta": 0.621,
       "prediction": {
-        "expected_change_pct": 0.66,
-        "expected_price": 73983.27,
+        "expected_change_pct": 0.65,
+        "expected_price": 74182.37,
         "confidence": "MEDIUM",
         "method": "beta+sector+tech",
         "components": {
           "base_kospi_effect": -0.397,
-          "sector_adjustment": 1.055,
+          "sector_adjustment": 1.052,
           "tech_modifier": 0.0
         },
         "beta_used": 0.621,
         "warning": null
       },
-      "comment": "📌 [내일 예측] 📈 예상 변동 +0.66% (목표가 73,983, 신뢰도 보통)\n\n전일 대비 -3.16% 변동. 변동성(ATR) 5.6%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] 📈 예상 변동 +0.65% (목표가 74,182, 신뢰도 보통)\n\n전일 대비 -2.90% 변동. 변동성(ATR) 5.6%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "009150.KS",
       "name": "삼성전기",
       "cat": "Korea",
       "sector": "semiconductor",
-      "price": 1318000.0,
-      "change": -5.59,
+      "price": 1319000.0,
+      "change": -5.52,
       "tech": {
         "rsi": 59.2,
-        "macd": 29787.383,
-        "bb": 56.6,
-        "stoch_k": 42.2,
+        "macd": 29851.201,
+        "bb": 56.8,
+        "stoch_k": 42.4,
         "ma_trend": "강한 역배열",
-        "atr_pct": 9.48
+        "atr_pct": 9.47
       },
       "sparkline": [
         1493000.0,
@@ -1727,88 +1727,126 @@
         1440000.0,
         1387000.0,
         1396000.0,
-        1318000.0
+        1319000.0
       ],
       "ok": true,
       "beta": 1.168,
       "prediction": {
         "expected_change_pct": -0.62,
-        "expected_price": 1309830.11,
+        "expected_price": 1310865.46,
         "confidence": "HIGH",
         "method": "beta+sector+tech",
         "components": {
           "base_kospi_effect": -0.748,
-          "sector_adjustment": 0.128,
+          "sector_adjustment": 0.131,
           "tech_modifier": 0.0
         },
         "beta_used": 1.168,
         "warning": null
       },
-      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.62% (목표가 1,309,830, 신뢰도 높음)\n\n전일 대비 -5.59% 변동. 변동성(ATR) 9.5%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.62% (목표가 1,310,865, 신뢰도 높음)\n\n전일 대비 -5.52% 변동. 변동성(ATR) 9.5%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
-      "symbol": "086520.KQ",
-      "name": "에코프로",
+      "symbol": "^KS11",
+      "name": "KOSPI 종합지수",
       "cat": "Korea",
-      "sector": "battery",
-      "price": 82700.0,
-      "change": -6.13,
+      "sector": "index",
+      "price": 6894.15,
+      "change": 0.61,
       "tech": {
-        "rsi": 54.6,
-        "macd": 923.688,
-        "bb": 48.2,
-        "stoch_k": 44.5,
+        "rsi": 71.7,
+        "macd": 117.027,
+        "bb": 74.9,
+        "stoch_k": 71.6,
         "ma_trend": "강한 역배열",
-        "atr_pct": 7.49
+        "atr_pct": 4.93
       },
       "sparkline": [
-        79400.0,
-        85800.0,
-        83600.0,
-        79100.0,
-        86400.0,
-        80000.0,
-        73500.0,
-        75200.0,
-        77100.0,
-        84300.0,
-        78100.0,
-        80600.0,
-        72700.0,
-        67400.0,
-        70600.0,
-        79100.0,
-        77400.0,
-        82000.0,
-        82300.0,
-        83600.0,
-        86000.0,
-        93500.0,
-        90300.0,
-        91300.0,
-        92100.0,
-        93600.0,
-        87100.0,
-        86200.0,
-        88100.0,
-        82700.0
+        8051.3301,
+        7656.3101,
+        7246.79,
+        7291.9102,
+        7475.9399,
+        6806.9302,
+        6856.8301,
+        7284.4102,
+        6820.6001,
+        6516.27,
+        7096.8901,
+        6690.6201,
+        6755.75,
+        6023.6602,
+        5663.2402,
+        5593.5601,
+        6257.4502,
+        6358.9502,
+        6598.2598,
+        6296.3799,
+        6258.77,
+        6299.6602,
+        6345.5298,
+        6579.04,
+        6813.3398,
+        6977.9399,
+        6869.8301,
+        6471.1699,
+        6852.5801,
+        6894.1499
       ],
       "ok": true,
-      "beta": 0.685,
-      "prediction": {
-        "expected_change_pct": -0.57,
-        "expected_price": 82227.78,
-        "confidence": "MEDIUM",
-        "method": "beta+sector+tech",
-        "components": {
-          "base_kospi_effect": -0.438,
-          "sector_adjustment": -0.133,
-          "tech_modifier": 0.0
-        },
-        "beta_used": 0.685,
-        "warning": null
+      "prediction": null,
+      "comment": "전일 대비 +0.61% 변동. 변동성(ATR) 4.9%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+    },
+    {
+      "symbol": "KRW=X",
+      "name": "원/달러 환율",
+      "cat": "Macro_Predict",
+      "sector": "general",
+      "price": 1381.02,
+      "change": -0.6,
+      "tech": {
+        "rsi": 18.5,
+        "macd": -0.799,
+        "bb": -0.9,
+        "stoch_k": 1.9,
+        "ma_trend": "강한 역배열",
+        "atr_pct": 1.08
       },
-      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.57% (목표가 82,228, 신뢰도 보통)\n\n전일 대비 -6.13% 변동. 변동성(ATR) 7.5%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "sparkline": [
+        1498.48,
+        1497.7,
+        1487.88,
+        1486.2,
+        1478.85,
+        1487.39,
+        1475.01,
+        1479.72,
+        1475.63,
+        1474.04,
+        1458.01,
+        1464.4399,
+        1453.16,
+        1442.28,
+        1420.6,
+        1435.7,
+        1428.5,
+        1428.4301,
+        1421.16,
+        1422.3,
+        1407.0,
+        1417.3101,
+        1412.1801,
+        1416.46,
+        1416.85,
+        1415.37,
+        1414.73,
+        1413.58,
+        1389.4,
+        1381.02
+      ],
+      "ok": true,
+      "prediction": null,
+      "comment": "⚖️ 원/달러 환율은(는) -0.60% 변동으로 횡보 중입니다."
     },
     {
       "symbol": "^FCHI",
@@ -1862,17 +1900,81 @@
       "comment": "전일 대비 -0.57% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
     },
     {
+      "symbol": "086520.KQ",
+      "name": "에코프로",
+      "cat": "Korea",
+      "sector": "battery",
+      "price": 82800.0,
+      "change": -6.02,
+      "tech": {
+        "rsi": 54.8,
+        "macd": 930.07,
+        "bb": 48.5,
+        "stoch_k": 44.9,
+        "ma_trend": "강한 역배열",
+        "atr_pct": 7.48
+      },
+      "sparkline": [
+        79400.0,
+        85800.0,
+        83600.0,
+        79100.0,
+        86400.0,
+        80000.0,
+        73500.0,
+        75200.0,
+        77100.0,
+        84300.0,
+        78100.0,
+        80600.0,
+        72700.0,
+        67400.0,
+        70600.0,
+        79100.0,
+        77400.0,
+        82000.0,
+        82300.0,
+        83600.0,
+        86000.0,
+        93500.0,
+        90300.0,
+        91300.0,
+        92100.0,
+        93600.0,
+        87100.0,
+        86200.0,
+        88100.0,
+        82800.0
+      ],
+      "ok": true,
+      "beta": 0.685,
+      "prediction": {
+        "expected_change_pct": -0.56,
+        "expected_price": 82334.66,
+        "confidence": "MEDIUM",
+        "method": "beta+sector+tech",
+        "components": {
+          "base_kospi_effect": -0.438,
+          "sector_adjustment": -0.124,
+          "tech_modifier": 0.0
+        },
+        "beta_used": 0.685,
+        "warning": null
+      },
+      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.56% (목표가 82,335, 신뢰도 보통)\n\n전일 대비 -6.02% 변동. 변동성(ATR) 7.5%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+    },
+    {
       "symbol": "247540.KQ",
       "name": "에코프로비엠",
       "cat": "Korea",
       "sector": "battery",
-      "price": 105900.0,
-      "change": -7.19,
+      "price": 106000.0,
+      "change": -7.1,
       "tech": {
-        "rsi": 52.0,
-        "macd": 2078.821,
-        "bb": 47.3,
-        "stoch_k": 52.0,
+        "rsi": 52.1,
+        "macd": 2085.203,
+        "bb": 47.6,
+        "stoch_k": 52.3,
         "ma_trend": "강한 역배열",
         "atr_pct": 7.57
       },
@@ -1906,75 +2008,88 @@
         109100.0,
         109800.0,
         114100.0,
-        105900.0
+        106000.0
       ],
       "ok": true,
       "beta": 0.66,
       "prediction": {
-        "expected_change_pct": -0.56,
-        "expected_price": 105312.25,
+        "expected_change_pct": -0.55,
+        "expected_price": 105421.24,
         "confidence": "MEDIUM",
         "method": "beta+sector+tech",
         "components": {
           "base_kospi_effect": -0.422,
-          "sector_adjustment": -0.133,
+          "sector_adjustment": -0.124,
           "tech_modifier": 0.0
         },
         "beta_used": 0.66,
         "warning": null
       },
-      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.56% (목표가 105,312, 신뢰도 보통)\n\n전일 대비 -7.19% 변동. 변동성(ATR) 7.6%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.55% (목표가 105,421, 신뢰도 보통)\n\n전일 대비 -7.10% 변동. 변동성(ATR) 7.6%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
-      "symbol": "^KS11",
-      "name": "KOSPI 종합지수",
+      "symbol": "005930.KS",
+      "name": "삼성전자",
       "cat": "Korea",
-      "sector": "index",
-      "price": 6890.1,
-      "change": 0.55,
+      "sector": "semiconductor",
+      "price": 278250.0,
+      "change": 2.68,
       "tech": {
-        "rsi": 71.7,
-        "macd": 116.769,
-        "bb": 74.7,
-        "stoch_k": 71.3,
+        "rsi": 55.3,
+        "macd": 6159.768,
+        "bb": 88.4,
+        "stoch_k": 83.9,
         "ma_trend": "강한 역배열",
-        "atr_pct": 4.93
+        "atr_pct": 6.2
       },
       "sparkline": [
-        8051.3301,
-        7656.3101,
-        7246.79,
-        7291.9102,
-        7475.9399,
-        6806.9302,
-        6856.8301,
-        7284.4102,
-        6820.6001,
-        6516.27,
-        7096.8901,
-        6690.6201,
-        6755.75,
-        6023.6602,
-        5663.2402,
-        5593.5601,
-        6257.4502,
-        6358.9502,
-        6598.2598,
-        6296.3799,
-        6258.77,
-        6299.6602,
-        6345.5298,
-        6579.04,
-        6813.3398,
-        6977.9399,
-        6869.8301,
-        6471.1699,
-        6852.5801,
-        6890.1001
+        278000.0,
+        285000.0,
+        254500.0,
+        263000.0,
+        279500.0,
+        255000.0,
+        244000.0,
+        259000.0,
+        260500.0,
+        270000.0,
+        249500.0,
+        254000.0,
+        220000.0,
+        208500.0,
+        207000.0,
+        262500.0,
+        239500.0,
+        240000.0,
+        246000.0,
+        230500.0,
+        231000.0,
+        230000.0,
+        239500.0,
+        255500.0,
+        268000.0,
+        274500.0,
+        268500.0,
+        247500.0,
+        271000.0,
+        278250.0
       ],
       "ok": true,
-      "prediction": null,
-      "comment": "전일 대비 +0.55% 변동. 변동성(ATR) 4.9%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "beta": 1.051,
+      "prediction": {
+        "expected_change_pct": -0.54,
+        "expected_price": 276742.33,
+        "confidence": "HIGH",
+        "method": "beta+sector+tech",
+        "components": {
+          "base_kospi_effect": -0.673,
+          "sector_adjustment": 0.131,
+          "tech_modifier": 0.0
+        },
+        "beta_used": 1.051,
+        "warning": null
+      },
+      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.54% (목표가 276,742, 신뢰도 높음)\n\n전일 대비 +2.68% 변동. 변동성(ATR) 6.2%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "006400.KS",
@@ -2026,134 +2141,19 @@
       "ok": true,
       "beta": 0.657,
       "prediction": {
-        "expected_change_pct": -0.55,
-        "expected_price": 482317.56,
+        "expected_change_pct": -0.54,
+        "expected_price": 482361.21,
         "confidence": "MEDIUM",
         "method": "beta+sector+tech",
         "components": {
           "base_kospi_effect": -0.42,
-          "sector_adjustment": -0.133,
+          "sector_adjustment": -0.124,
           "tech_modifier": 0.0
         },
         "beta_used": 0.657,
         "warning": null
       },
-      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.55% (목표가 482,318, 신뢰도 보통)\n\n전일 대비 -2.90% 변동. 변동성(ATR) 5.9%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
-    },
-    {
-      "symbol": "005930.KS",
-      "name": "삼성전자",
-      "cat": "Korea",
-      "sector": "semiconductor",
-      "price": 278500.0,
-      "change": 2.77,
-      "tech": {
-        "rsi": 55.4,
-        "macd": 6175.722,
-        "bb": 88.6,
-        "stoch_k": 84.3,
-        "ma_trend": "강한 역배열",
-        "atr_pct": 6.19
-      },
-      "sparkline": [
-        278000.0,
-        285000.0,
-        254500.0,
-        263000.0,
-        279500.0,
-        255000.0,
-        244000.0,
-        259000.0,
-        260500.0,
-        270000.0,
-        249500.0,
-        254000.0,
-        220000.0,
-        208500.0,
-        207000.0,
-        262500.0,
-        239500.0,
-        240000.0,
-        246000.0,
-        230500.0,
-        231000.0,
-        230000.0,
-        239500.0,
-        255500.0,
-        268000.0,
-        274500.0,
-        268500.0,
-        247500.0,
-        271000.0,
-        278500.0
-      ],
-      "ok": true,
-      "beta": 1.051,
-      "prediction": {
-        "expected_change_pct": -0.54,
-        "expected_price": 276982.2,
-        "confidence": "HIGH",
-        "method": "beta+sector+tech",
-        "components": {
-          "base_kospi_effect": -0.673,
-          "sector_adjustment": 0.128,
-          "tech_modifier": 0.0
-        },
-        "beta_used": 1.051,
-        "warning": null
-      },
-      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.54% (목표가 276,982, 신뢰도 높음)\n\n전일 대비 +2.77% 변동. 변동성(ATR) 6.2%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
-    },
-    {
-      "symbol": "KRW=X",
-      "name": "원/달러 환율",
-      "cat": "Macro_Predict",
-      "sector": "general",
-      "price": 1382.07,
-      "change": -0.53,
-      "tech": {
-        "rsi": 18.8,
-        "macd": -0.732,
-        "bb": 0.0,
-        "stoch_k": 3.7,
-        "ma_trend": "강한 역배열",
-        "atr_pct": 1.08
-      },
-      "sparkline": [
-        1498.48,
-        1497.7,
-        1487.88,
-        1486.2,
-        1478.85,
-        1487.39,
-        1475.01,
-        1479.72,
-        1475.63,
-        1474.04,
-        1458.01,
-        1464.4399,
-        1453.16,
-        1442.28,
-        1420.6,
-        1435.7,
-        1428.5,
-        1428.4301,
-        1421.16,
-        1422.3,
-        1407.0,
-        1417.3101,
-        1412.1801,
-        1416.46,
-        1416.85,
-        1415.37,
-        1414.73,
-        1413.58,
-        1389.4,
-        1382.0699
-      ],
-      "ok": true,
-      "prediction": null,
-      "comment": "⚖️ 원/달러 환율은(는) -0.53% 변동으로 횡보 중입니다."
+      "comment": "📌 [내일 예측] 🔻 예상 변동 -0.54% (목표가 482,361, 신뢰도 보통)\n\n전일 대비 -2.90% 변동. 변동성(ATR) 5.9%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "SOXX",
@@ -2211,15 +2211,15 @@
       "name": "NAVER",
       "cat": "Korea",
       "sector": "platform",
-      "price": 219000.0,
-      "change": -0.23,
+      "price": 220000.0,
+      "change": 0.23,
       "tech": {
-        "rsi": 56.0,
-        "macd": 98.621,
-        "bb": 59.8,
-        "stoch_k": 53.8,
+        "rsi": 56.6,
+        "macd": 162.439,
+        "bb": 62.2,
+        "stoch_k": 56.9,
         "ma_trend": "역배열 약세",
-        "atr_pct": 5.27
+        "atr_pct": 5.24
       },
       "sparkline": [
         184400.0,
@@ -2251,13 +2251,13 @@
         217000.0,
         208000.0,
         219500.0,
-        219000.0
+        220000.0
       ],
       "ok": true,
       "beta": 0.42,
       "prediction": {
         "expected_change_pct": -0.49,
-        "expected_price": 217925.15,
+        "expected_price": 218920.24,
         "confidence": "LOW",
         "method": "beta+sector+tech",
         "components": {
@@ -2268,7 +2268,7 @@
         "beta_used": 0.42,
         "warning": null
       },
-      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.49% (목표가 217,925, 신뢰도 낮음)\n\n전일 대비 -0.23% 변동. 변동성(ATR) 5.3%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.49% (목표가 218,920, 신뢰도 낮음)\n\n전일 대비 +0.23% 변동. 변동성(ATR) 5.2%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "MSFT",
@@ -2322,70 +2322,6 @@
       "comment": "전일 대비 -0.47% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
     },
     {
-      "symbol": "035720.KS",
-      "name": "카카오",
-      "cat": "Korea",
-      "sector": "platform",
-      "price": 33800.0,
-      "change": -12.66,
-      "tech": {
-        "rsi": 38.0,
-        "macd": -344.099,
-        "bb": -5.4,
-        "stoch_k": 2.5,
-        "ma_trend": "정배열 상승",
-        "atr_pct": 6.0
-      },
-      "sparkline": [
-        33650.0,
-        35350.0,
-        34750.0,
-        33850.0,
-        34900.0,
-        35900.0,
-        35050.0,
-        35300.0,
-        35500.0,
-        37150.0,
-        36200.0,
-        37050.0,
-        35650.0,
-        35300.0,
-        36150.0,
-        37400.0,
-        37200.0,
-        37900.0,
-        38150.0,
-        38300.0,
-        39900.0,
-        39550.0,
-        40700.0,
-        39550.0,
-        40100.0,
-        40000.0,
-        38250.0,
-        37400.0,
-        38700.0,
-        33800.0
-      ],
-      "ok": true,
-      "beta": 0.286,
-      "prediction": {
-        "expected_change_pct": -0.43,
-        "expected_price": 33653.82,
-        "confidence": "LOW",
-        "method": "beta+sector+tech",
-        "components": {
-          "base_kospi_effect": -0.183,
-          "sector_adjustment": -0.222,
-          "tech_modifier": 15.0
-        },
-        "beta_used": 0.286,
-        "warning": null
-      },
-      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.43% (목표가 33,654, 신뢰도 낮음)\n\n전일 대비 -12.66% 변동. 변동성(ATR) 6.0%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
-    },
-    {
       "symbol": "^GDAXI",
       "name": "독일 DAX 지수",
       "cat": "Macro_Predict",
@@ -2437,68 +2373,81 @@
       "comment": "전일 대비 -0.42% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
     },
     {
-      "symbol": "^N225",
-      "name": "닛케이 225",
-      "cat": "Asia",
-      "sector": "index",
-      "price": 65958.44,
-      "change": -0.39,
+      "symbol": "035720.KS",
+      "name": "카카오",
+      "cat": "Korea",
+      "sector": "platform",
+      "price": 35300.0,
+      "change": -8.79,
       "tech": {
-        "rsi": 64.8,
-        "macd": 92.956,
-        "bb": 53.7,
-        "stoch_k": 47.1,
-        "ma_trend": "강한 역배열",
-        "atr_pct": 2.18
+        "rsi": 42.2,
+        "macd": -248.373,
+        "bb": 10.8,
+        "stoch_k": 21.7,
+        "ma_trend": "정배열 상승",
+        "atr_pct": 5.75
       },
       "sparkline": [
-        69737.6875,
-        68256.9609,
-        66819.0469,
-        67743.8516,
-        68557.7266,
-        67242.7266,
-        67743.5,
-        68751.5078,
-        66835.5391,
-        64141.1211,
-        66422.6016,
-        64611.1484,
-        64931.1914,
-        62364.9219,
-        61434.1914,
-        61867.4297,
-        63754.8984,
-        63957.5312,
-        66300.4375,
-        65683.2578,
-        65606.7109,
-        66970.2188,
-        67524.0625,
-        68308.5938,
-        68713.7969,
-        69220.25,
-        67460.7266,
-        65326.4219,
-        66216.7891,
-        65958.4375
+        33650.0,
+        35350.0,
+        34750.0,
+        33850.0,
+        34900.0,
+        35900.0,
+        35050.0,
+        35300.0,
+        35500.0,
+        37150.0,
+        36200.0,
+        37050.0,
+        35650.0,
+        35300.0,
+        36150.0,
+        37400.0,
+        37200.0,
+        37900.0,
+        38150.0,
+        38300.0,
+        39900.0,
+        39550.0,
+        40700.0,
+        39550.0,
+        40100.0,
+        40000.0,
+        38250.0,
+        37400.0,
+        38700.0,
+        35300.0
       ],
       "ok": true,
-      "prediction": null,
-      "comment": "전일 대비 -0.39% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
+      "beta": 0.287,
+      "prediction": {
+        "expected_change_pct": -0.41,
+        "expected_price": 35156.79,
+        "confidence": "LOW",
+        "method": "beta+sector+tech",
+        "components": {
+          "base_kospi_effect": -0.184,
+          "sector_adjustment": -0.222,
+          "tech_modifier": 0.0
+        },
+        "beta_used": 0.287,
+        "warning": null
+      },
+      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.41% (목표가 35,157, 신뢰도 낮음)\n\n전일 대비 -8.79% 변동. 변동성(ATR) 5.8%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "373220.KS",
       "name": "LG에너지솔루션",
       "cat": "Korea",
       "sector": "battery",
-      "price": 347500.0,
-      "change": -2.93,
+      "price": 348000.0,
+      "change": -2.79,
       "tech": {
-        "rsi": 57.6,
-        "macd": 2255.139,
-        "bb": 56.9,
-        "stoch_k": 60.7,
+        "rsi": 57.9,
+        "macd": 2287.048,
+        "bb": 57.5,
+        "stoch_k": 61.5,
         "ma_trend": "강한 역배열",
         "atr_pct": 4.58
       },
@@ -2532,24 +2481,75 @@
         351000.0,
         357500.0,
         358000.0,
-        347500.0
+        348000.0
       ],
       "ok": true,
       "beta": 0.374,
       "prediction": {
-        "expected_change_pct": -0.37,
-        "expected_price": 346207.44,
+        "expected_change_pct": -0.36,
+        "expected_price": 346736.9,
         "confidence": "LOW",
         "method": "beta+sector+tech",
         "components": {
           "base_kospi_effect": -0.239,
-          "sector_adjustment": -0.133,
+          "sector_adjustment": -0.124,
           "tech_modifier": 0.0
         },
         "beta_used": 0.374,
         "warning": null
       },
-      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.37% (목표가 346,207, 신뢰도 낮음)\n\n전일 대비 -2.93% 변동. 변동성(ATR) 4.6%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.36% (목표가 346,737, 신뢰도 낮음)\n\n전일 대비 -2.79% 변동. 변동성(ATR) 4.6%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+    },
+    {
+      "symbol": "^TWII",
+      "name": "대만 가권지수",
+      "cat": "Asia",
+      "sector": "index",
+      "price": 45093.69,
+      "change": 0.36,
+      "tech": {
+        "rsi": 66.3,
+        "macd": 107.292,
+        "bb": 64.0,
+        "stoch_k": 62.7,
+        "ma_trend": "역배열 약세",
+        "atr_pct": 1.74
+      },
+      "sparkline": [
+        45479.1094,
+        45734.4102,
+        45354.6094,
+        45380.5195,
+        44737.9492,
+        45631.5898,
+        45624.9805,
+        42671.2695,
+        42449.6992,
+        44850.8086,
+        43654.8398,
+        43634.1914,
+        41603.3594,
+        40039.1797,
+        39933.3008,
+        43386.4102,
+        43360.6602,
+        44611.6016,
+        44396.6992,
+        44225.9102,
+        44928.7617,
+        45120.7188,
+        45518.0703,
+        46021.4805,
+        45811.0117,
+        45857.2695,
+        45308.6797,
+        44719.3516,
+        44933.7383,
+        45093.6914
+      ],
+      "ok": true,
+      "prediction": null,
+      "comment": "전일 대비 +0.36% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
     },
     {
       "symbol": "^STOXX50E",
@@ -2607,15 +2607,15 @@
       "name": "HD현대중공업",
       "cat": "Korea",
       "sector": "shipbuilding",
-      "price": 459500.0,
-      "change": -3.36,
+      "price": 457000.0,
+      "change": -3.89,
       "tech": {
-        "rsi": 45.5,
-        "macd": 1363.841,
-        "bb": 27.8,
-        "stoch_k": 5.6,
+        "rsi": 44.9,
+        "macd": 1204.297,
+        "bb": 25.4,
+        "stoch_k": 2.5,
         "ma_trend": "강한 역배열",
-        "atr_pct": 5.25
+        "atr_pct": 5.28
       },
       "sparkline": [
         500861.5625,
@@ -2647,24 +2647,24 @@
         489500.0,
         474000.0,
         475500.0,
-        459500.0
+        457000.0
       ],
       "ok": true,
       "beta": 0.373,
       "prediction": {
         "expected_change_pct": -0.33,
-        "expected_price": 457975.75,
+        "expected_price": 455495.69,
         "confidence": "LOW",
         "method": "beta+sector+tech",
         "components": {
           "base_kospi_effect": -0.239,
-          "sector_adjustment": -0.093,
+          "sector_adjustment": -0.09,
           "tech_modifier": 0.0
         },
         "beta_used": 0.373,
         "warning": null
       },
-      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.33% (목표가 457,976, 신뢰도 낮음)\n\n전일 대비 -3.36% 변동. 변동성(ATR) 5.2%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.33% (목표가 455,496, 신뢰도 낮음)\n\n전일 대비 -3.89% 변동. 변동성(ATR) 5.3%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "NVDA",
@@ -2718,19 +2718,70 @@
       "comment": "전일 대비 -0.33% 변동. 이동평균선 정배열과 MACD 상승 결합 → 강력한 주도주 흐름. 🚀"
     },
     {
+      "symbol": "^N225",
+      "name": "닛케이 225",
+      "cat": "Asia",
+      "sector": "index",
+      "price": 66007.15,
+      "change": -0.32,
+      "tech": {
+        "rsi": 65.1,
+        "macd": 96.065,
+        "bb": 54.3,
+        "stoch_k": 47.8,
+        "ma_trend": "강한 역배열",
+        "atr_pct": 2.18
+      },
+      "sparkline": [
+        69737.6875,
+        68256.9609,
+        66819.0469,
+        67743.8516,
+        68557.7266,
+        67242.7266,
+        67743.5,
+        68751.5078,
+        66835.5391,
+        64141.1211,
+        66422.6016,
+        64611.1484,
+        64931.1914,
+        62364.9219,
+        61434.1914,
+        61867.4297,
+        63754.8984,
+        63957.5312,
+        66300.4375,
+        65683.2578,
+        65606.7109,
+        66970.2188,
+        67524.0625,
+        68308.5938,
+        68713.7969,
+        69220.25,
+        67460.7266,
+        65326.4219,
+        66216.7891,
+        66007.1484
+      ],
+      "ok": true,
+      "prediction": null,
+      "comment": "전일 대비 -0.32% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
+    },
+    {
       "symbol": "005380.KS",
       "name": "현대차",
       "cat": "Korea",
       "sector": "auto",
-      "price": 417000.0,
-      "change": -0.12,
+      "price": 418500.0,
+      "change": 0.24,
       "tech": {
-        "rsi": 60.6,
-        "macd": 7658.682,
-        "bb": 66.2,
-        "stoch_k": 49.1,
+        "rsi": 61.1,
+        "macd": 7754.409,
+        "bb": 67.6,
+        "stoch_k": 50.9,
         "ma_trend": "강한 역배열",
-        "atr_pct": 5.18
+        "atr_pct": 5.16
       },
       "sparkline": [
         445500.0,
@@ -2762,39 +2813,39 @@
         435000.0,
         414000.0,
         417500.0,
-        417000.0
+        418500.0
       ],
       "ok": true,
       "beta": 0.646,
       "prediction": {
-        "expected_change_pct": -0.32,
-        "expected_price": 415673.77,
+        "expected_change_pct": -0.3,
+        "expected_price": 417238.06,
         "confidence": "MEDIUM",
         "method": "beta+sector+tech",
         "components": {
           "base_kospi_effect": -0.413,
-          "sector_adjustment": 0.095,
+          "sector_adjustment": 0.112,
           "tech_modifier": 0.0
         },
         "beta_used": 0.646,
         "warning": null
       },
-      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.32% (목표가 415,674, 신뢰도 보통)\n\n전일 대비 -0.12% 변동. 변동성(ATR) 5.2%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.30% (목표가 417,238, 신뢰도 보통)\n\n전일 대비 +0.24% 변동. 변동성(ATR) 5.2%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "009540.KS",
       "name": "HD한국조선해양",
       "cat": "Korea",
       "sector": "shipbuilding",
-      "price": 350500.0,
-      "change": -2.77,
+      "price": 349500.0,
+      "change": -3.05,
       "tech": {
-        "rsi": 39.3,
-        "macd": -2900.373,
-        "bb": 18.9,
-        "stoch_k": 9.1,
+        "rsi": 39.0,
+        "macd": -2964.191,
+        "bb": 17.7,
+        "stoch_k": 7.4,
         "ma_trend": "정배열 상승",
-        "atr_pct": 4.81
+        "atr_pct": 4.82
       },
       "sparkline": [
         322151.375,
@@ -2826,39 +2877,39 @@
         374500.0,
         367000.0,
         360500.0,
-        350500.0
+        349500.0
       ],
       "ok": true,
       "beta": 0.289,
       "prediction": {
         "expected_change_pct": -0.28,
-        "expected_price": 349525.75,
+        "expected_price": 348537.44,
         "confidence": "LOW",
         "method": "beta+sector+tech",
         "components": {
           "base_kospi_effect": -0.185,
-          "sector_adjustment": -0.093,
+          "sector_adjustment": -0.09,
           "tech_modifier": 0.0
         },
         "beta_used": 0.289,
         "warning": null
       },
-      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.28% (목표가 349,526, 신뢰도 낮음)\n\n전일 대비 -2.77% 변동. 변동성(ATR) 4.8%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.28% (목표가 348,537, 신뢰도 낮음)\n\n전일 대비 -3.05% 변동. 변동성(ATR) 4.8%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "058470.KQ",
       "name": "리노공업",
       "cat": "Korea",
       "sector": "semiconductor",
-      "price": 65100.0,
-      "change": -6.33,
+      "price": 65200.0,
+      "change": -6.19,
       "tech": {
-        "rsi": 52.0,
-        "macd": 750.529,
-        "bb": 42.7,
-        "stoch_k": 37.3,
+        "rsi": 52.2,
+        "macd": 756.911,
+        "bb": 43.2,
+        "stoch_k": 38.1,
         "ma_trend": "강한 역배열",
-        "atr_pct": 5.65
+        "atr_pct": 5.64
       },
       "sparkline": [
         70000.0,
@@ -2890,88 +2941,24 @@
         67800.0,
         67900.0,
         69500.0,
-        65100.0
+        65200.0
       ],
       "ok": true,
       "beta": 0.637,
       "prediction": {
         "expected_change_pct": -0.28,
-        "expected_price": 64917.7,
+        "expected_price": 65019.47,
         "confidence": "HIGH",
         "method": "beta+sector+tech",
         "components": {
           "base_kospi_effect": -0.408,
-          "sector_adjustment": 0.128,
+          "sector_adjustment": 0.131,
           "tech_modifier": 0.0
         },
         "beta_used": 0.637,
         "warning": null
       },
-      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.28% (목표가 64,918, 신뢰도 높음)\n\n전일 대비 -6.33% 변동. 변동성(ATR) 5.7%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
-    },
-    {
-      "symbol": "000270.KS",
-      "name": "기아",
-      "cat": "Korea",
-      "sector": "auto",
-      "price": 131300.0,
-      "change": 0.15,
-      "tech": {
-        "rsi": 48.9,
-        "macd": 581.158,
-        "bb": 48.3,
-        "stoch_k": 30.6,
-        "ma_trend": "강한 역배열",
-        "atr_pct": 3.42
-      },
-      "sparkline": [
-        144800.0,
-        147500.0,
-        143500.0,
-        139600.0,
-        145000.0,
-        149700.0,
-        140000.0,
-        144600.0,
-        146800.0,
-        149800.0,
-        130500.0,
-        130400.0,
-        121800.0,
-        120400.0,
-        120800.0,
-        131900.0,
-        129600.0,
-        129600.0,
-        133000.0,
-        133600.0,
-        134900.0,
-        135500.0,
-        134300.0,
-        135600.0,
-        137400.0,
-        141700.0,
-        137200.0,
-        133000.0,
-        131100.0,
-        131300.0
-      ],
-      "ok": true,
-      "beta": 0.495,
-      "prediction": {
-        "expected_change_pct": -0.22,
-        "expected_price": 131009.3,
-        "confidence": "LOW",
-        "method": "beta+sector+tech",
-        "components": {
-          "base_kospi_effect": -0.317,
-          "sector_adjustment": 0.095,
-          "tech_modifier": 0.0
-        },
-        "beta_used": 0.495,
-        "warning": null
-      },
-      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.22% (목표가 131,009, 신뢰도 낮음)\n\n전일 대비 +0.15% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
+      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.28% (목표가 65,019, 신뢰도 높음)\n\n전일 대비 -6.19% 변동. 변동성(ATR) 5.6%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "NQ=F",
@@ -3025,55 +3012,68 @@
       "comment": "전일 대비 +0.20% 변동. 추세 붕괴 + 하락 모멘텀 가중. 바닥 확인 우선. 📉"
     },
     {
-      "symbol": "^TWII",
-      "name": "대만 가권지수",
-      "cat": "Asia",
-      "sector": "index",
-      "price": 45019.97,
-      "change": 0.19,
+      "symbol": "000270.KS",
+      "name": "기아",
+      "cat": "Korea",
+      "sector": "auto",
+      "price": 131500.0,
+      "change": 0.31,
       "tech": {
-        "rsi": 65.8,
-        "macd": 102.587,
-        "bb": 63.0,
-        "stoch_k": 60.6,
-        "ma_trend": "역배열 약세",
-        "atr_pct": 1.75
+        "rsi": 49.3,
+        "macd": 593.921,
+        "bb": 49.1,
+        "stoch_k": 31.9,
+        "ma_trend": "강한 역배열",
+        "atr_pct": 3.42
       },
       "sparkline": [
-        45479.1094,
-        45734.4102,
-        45354.6094,
-        45380.5195,
-        44737.9492,
-        45631.5898,
-        45624.9805,
-        42671.2695,
-        42449.6992,
-        44850.8086,
-        43654.8398,
-        43634.1914,
-        41603.3594,
-        40039.1797,
-        39933.3008,
-        43386.4102,
-        43360.6602,
-        44611.6016,
-        44396.6992,
-        44225.9102,
-        44928.7617,
-        45120.7188,
-        45518.0703,
-        46021.4805,
-        45811.0117,
-        45857.2695,
-        45308.6797,
-        44719.3516,
-        44933.7383,
-        45019.9688
+        144800.0,
+        147500.0,
+        143500.0,
+        139600.0,
+        145000.0,
+        149700.0,
+        140000.0,
+        144600.0,
+        146800.0,
+        149800.0,
+        130500.0,
+        130400.0,
+        121800.0,
+        120400.0,
+        120800.0,
+        131900.0,
+        129600.0,
+        129600.0,
+        133000.0,
+        133600.0,
+        134900.0,
+        135500.0,
+        134300.0,
+        135600.0,
+        137400.0,
+        141700.0,
+        137200.0,
+        133000.0,
+        131100.0,
+        131500.0
       ],
       "ok": true,
-      "prediction": null,
-      "comment": "전일 대비 +0.19% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
+      "beta": 0.495,
+      "prediction": {
+        "expected_change_pct": -0.2,
+        "expected_price": 131230.56,
+        "confidence": "LOW",
+        "method": "beta+sector+tech",
+        "components": {
+          "base_kospi_effect": -0.317,
+          "sector_adjustment": 0.112,
+          "tech_modifier": 0.0
+        },
+        "beta_used": 0.495,
+        "warning": null
+      },
+      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.20% (목표가 131,231, 신뢰도 낮음)\n\n전일 대비 +0.31% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
     },
     {
       "symbol": "^SSMI",
@@ -3127,70 +3127,19 @@
       "comment": "전일 대비 -0.13% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
     },
     {
-      "symbol": "^BSESN",
-      "name": "인도 SENSEX",
-      "cat": "Asia",
-      "sector": "index",
-      "price": 77463.59,
-      "change": -0.1,
-      "tech": {
-        "rsi": 34.5,
-        "macd": -152.844,
-        "bb": 38.8,
-        "stoch_k": 27.6,
-        "ma_trend": "정배열 상승",
-        "atr_pct": 0.71
-      },
-      "sparkline": [
-        76503.6016,
-        76741.8203,
-        77569.3906,
-        77616.3984,
-        77054.9375,
-        77185.4297,
-        77186.8672,
-        78151.4531,
-        77708.5234,
-        76391.3906,
-        76059.7734,
-        76835.7812,
-        76765.9219,
-        77654.6016,
-        77928.1484,
-        78639.0312,
-        78428.9531,
-        78581.0,
-        78954.7578,
-        78499.1719,
-        78542.4375,
-        78154.25,
-        77966.3516,
-        78079.9609,
-        78009.25,
-        77728.1562,
-        77235.4609,
-        76909.6797,
-        77537.7188,
-        77463.5938
-      ],
-      "ok": true,
-      "prediction": null,
-      "comment": "전일 대비 -0.10% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
-    },
-    {
       "symbol": "086790.KS",
       "name": "하나금융지주",
       "cat": "Korea",
       "sector": "finance",
-      "price": 128600.0,
-      "change": 4.21,
+      "price": 129400.0,
+      "change": 4.86,
       "tech": {
-        "rsi": 55.7,
-        "macd": -496.472,
-        "bb": 54.9,
-        "stoch_k": 51.2,
+        "rsi": 56.6,
+        "macd": -445.418,
+        "bb": 59.6,
+        "stoch_k": 57.5,
         "ma_trend": "강한 정배열",
-        "atr_pct": 3.96
+        "atr_pct": 3.94
       },
       "sparkline": [
         121537.7109,
@@ -3222,13 +3171,13 @@
         130700.0,
         127500.0,
         123400.0,
-        128600.0
+        129400.0
       ],
       "ok": true,
-      "beta": 0.215,
+      "beta": 0.216,
       "prediction": {
         "expected_change_pct": -0.08,
-        "expected_price": 128501.75,
+        "expected_price": 129300.31,
         "confidence": "LOW",
         "method": "beta+sector+tech",
         "components": {
@@ -3236,25 +3185,25 @@
           "sector_adjustment": 0.061,
           "tech_modifier": 0.0
         },
-        "beta_used": 0.215,
+        "beta_used": 0.216,
         "warning": null
       },
-      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.08% (목표가 128,502, 신뢰도 낮음)\n\n전일 대비 +4.21% 변동. 변동성(ATR) 4.0%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.08% (목표가 129,300, 신뢰도 낮음)\n\n전일 대비 +4.86% 변동. 변동성(ATR) 3.9%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "105560.KS",
       "name": "KB금융",
       "cat": "Korea",
       "sector": "finance",
-      "price": 163000.0,
-      "change": 1.88,
+      "price": 163200.0,
+      "change": 2.0,
       "tech": {
-        "rsi": 43.5,
-        "macd": -1034.435,
-        "bb": 21.6,
-        "stoch_k": 20.1,
+        "rsi": 43.9,
+        "macd": -1021.672,
+        "bb": 22.7,
+        "stoch_k": 21.3,
         "ma_trend": "정배열 상승",
-        "atr_pct": 3.48
+        "atr_pct": 3.47
       },
       "sparkline": [
         170240.2656,
@@ -3286,13 +3235,13 @@
         168500.0,
         166400.0,
         160000.0,
-        163000.0
+        163200.0
       ],
       "ok": true,
       "beta": 0.188,
       "prediction": {
         "expected_change_pct": -0.06,
-        "expected_price": 162903.63,
+        "expected_price": 163103.52,
         "confidence": "LOW",
         "method": "beta+sector+tech",
         "components": {
@@ -3303,7 +3252,7 @@
         "beta_used": 0.188,
         "warning": null
       },
-      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.06% (목표가 162,904, 신뢰도 낮음)\n\n전일 대비 +1.88% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
+      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.06% (목표가 163,104, 신뢰도 낮음)\n\n전일 대비 +2.00% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
     },
     {
       "symbol": "^FTSE",
@@ -3357,19 +3306,70 @@
       "comment": "전일 대비 +0.04% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
     },
     {
+      "symbol": "^BSESN",
+      "name": "인도 SENSEX",
+      "cat": "Asia",
+      "sector": "index",
+      "price": 77555.88,
+      "change": 0.02,
+      "tech": {
+        "rsi": 35.5,
+        "macd": -146.954,
+        "bb": 41.7,
+        "stoch_k": 31.6,
+        "ma_trend": "정배열 상승",
+        "atr_pct": 0.71
+      },
+      "sparkline": [
+        76503.6016,
+        76741.8203,
+        77569.3906,
+        77616.3984,
+        77054.9375,
+        77185.4297,
+        77186.8672,
+        78151.4531,
+        77708.5234,
+        76391.3906,
+        76059.7734,
+        76835.7812,
+        76765.9219,
+        77654.6016,
+        77928.1484,
+        78639.0312,
+        78428.9531,
+        78581.0,
+        78954.7578,
+        78499.1719,
+        78542.4375,
+        78154.25,
+        77966.3516,
+        78079.9609,
+        78009.25,
+        77728.1562,
+        77235.4609,
+        76909.6797,
+        77537.7188,
+        77555.8828
+      ],
+      "ok": true,
+      "prediction": null,
+      "comment": "전일 대비 +0.02% 변동. 상승/하락 모멘텀 균형. 시장 온도 추종 전략 유리. 🧩"
+    },
+    {
       "symbol": "055550.KS",
       "name": "신한지주",
       "cat": "Korea",
       "sector": "finance",
-      "price": 103700.0,
-      "change": 2.57,
+      "price": 104100.0,
+      "change": 2.97,
       "tech": {
-        "rsi": 55.2,
-        "macd": -328.671,
-        "bb": 47.9,
-        "stoch_k": 41.6,
+        "rsi": 55.8,
+        "macd": -303.144,
+        "bb": 51.2,
+        "stoch_k": 45.1,
         "ma_trend": "강한 정배열",
-        "atr_pct": 3.8
+        "atr_pct": 3.78
       },
       "sparkline": [
         104229.9297,
@@ -3401,13 +3401,13 @@
         106500.0,
         105000.0,
         101100.0,
-        103700.0
+        104100.0
       ],
       "ok": true,
       "beta": 0.111,
       "prediction": {
         "expected_change_pct": -0.01,
-        "expected_price": 103689.8,
+        "expected_price": 104089.76,
         "confidence": "LOW",
         "method": "beta+sector+tech",
         "components": {
@@ -3418,7 +3418,7 @@
         "beta_used": 0.111,
         "warning": null
       },
-      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.01% (목표가 103,690, 신뢰도 낮음)\n\n전일 대비 +2.57% 변동. 변동성(ATR) 3.8%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
+      "comment": "📌 [내일 예측] ➖ 예상 변동 -0.01% (목표가 104,090, 신뢰도 낮음)\n\n전일 대비 +2.97% 변동. 변동성(ATR) 3.8%로 매우 높음. 단기 트레이딩 리스크 큼. ⚡"
     },
     {
       "symbol": "000001.SS",
