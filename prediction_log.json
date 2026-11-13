@@ -1,18 +1,5 @@
 [
   {
-    "date": "2026-07-30",
-    "first_logged": "01:35",
-    "score": 21,
-    "temp": 14,
-    "headline": null,
-    "confidence": null,
-    "actual_kospi_close_pct": NaN,
-    "predicted_direction": "DOWN",
-    "actual_direction": "NEUTRAL",
-    "is_correct": false,
-    "verified_at": "2026-07-31T00:04:29.960532+09:00"
-  },
-  {
     "date": "2026-07-31",
     "first_logged": "01:42",
     "score": 96,
@@ -833,6 +820,15 @@
     "first_logged": "05:34",
     "score": 19,
     "temp": 64,
+    "headline": null,
+    "confidence": null,
+    "actual_kospi_close_pct": null
+  },
+  {
+    "date": "2026-11-14",
+    "first_logged": "05:11",
+    "score": 0,
+    "temp": 14,
     "headline": null,
     "confidence": null,
     "actual_kospi_close_pct": null
