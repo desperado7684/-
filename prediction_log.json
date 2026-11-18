@@ -1,14 +1,5 @@
 [
   {
-    "date": "2026-08-04",
-    "first_logged": "00:39",
-    "score": 65,
-    "temp": 32,
-    "headline": null,
-    "confidence": null,
-    "actual_kospi_close_pct": null
-  },
-  {
     "date": "2026-08-05",
     "first_logged": "00:18",
     "score": 88,
@@ -825,6 +816,15 @@
     "first_logged": "01:20",
     "score": 10,
     "temp": 5,
+    "headline": null,
+    "confidence": null,
+    "actual_kospi_close_pct": null
+  },
+  {
+    "date": "2026-11-19",
+    "first_logged": "06:01",
+    "score": 62,
+    "temp": 18,
     "headline": null,
     "confidence": null,
     "actual_kospi_close_pct": null
